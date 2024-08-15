@@ -1,0 +1,14 @@
+POST http://127.0.0.1:8000/signup/ Content-Type: application/json
+
+{ "username": "janice", "password": "iuhsfwuryfiwr" }
+
+###
+
+POST http://127.0.0.1:8000/login Content-Type: application/json
+
+{ "username": "janice", "password": "iuhsfwuryfiwr" }
+
+###
+
+POST http://127.0.0.1:8000/token/ Content-Type: application/json 
+Authorization: token 82daf75b9c884900a3004978bbe23b3352d5751e
