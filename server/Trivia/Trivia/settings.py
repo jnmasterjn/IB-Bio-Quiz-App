@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
     "rest_framework.authtoken",
-    "django-cors-headers"
+    "corsheaders"
 ]
 
 MIDDLEWARE = [
@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Taipei"
 
 USE_I18N = True
 
@@ -125,5 +125,5 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_HEADERS = ['*']
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173/" ] #connect to react
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173'] #connect to react
 
