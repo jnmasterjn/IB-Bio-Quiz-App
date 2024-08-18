@@ -4,7 +4,7 @@ function Signup() {
 
     return (
         <>
-        <h1>Welcome to the Sign up page</h1>
+        <h1>Sign Up For Free!</h1>
         <form>
             <label> Username: </label>
             <input type="text" placeholder="Insert your username"></input>

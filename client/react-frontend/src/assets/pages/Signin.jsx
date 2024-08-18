@@ -1,26 +1,34 @@
+import { useState } from "react";
 import { login } from "../../api.services/api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
+import './Signin.css'
+
 
 function Signin() {
 
-    const handleLogin = (e) => {
-        e.preventDefault();  // Prevent the form from submitting the traditional way
-        const username = e.target.elements.username.value;
-        const password = e.target.elements.password.value;
+    const path = useNavigate()
 
-        login(username, password)
-            .then(response => {
-                console.log('Login successful:', response.data);  // Handle successful login
-                // You can redirect the user or set some state here
+    const [Error, setError ] = useState(false)
+
+    const handleLogin = (e) => {
+
+        e.preventDefault(); //prevent reloading the page
+        const username = e.target.elements.username.value; //get user insert username from input field 
+        const password = e.target.elements.password.value; //get user insert password from input field 
+
+        login(username, password) //call login function with the received username and password
+            .then(() => {
+                path('../game') //if they login they can go to the game page.
             })
-            .catch(error => {
-                console.error('Login failed:', error.response ? error.response.data : error.message);
+
+            .catch(() => {
+                setError(true) //change Error from useState to true since the loginf failed there's an error.
             });
     };
 
     return (
         <>
-            <h1>Login Page</h1>
+            <h1>Login</h1>
             <div>
                 <form onSubmit={handleLogin}>
                     <label> Username: </label>
@@ -33,7 +41,11 @@ function Signin() {
                     <br/>
                 </form>
 
-                <Link to='../Signup'>Not a member yet?</Link>
+                {/* check the value of Error, if it's true generate the <p> */}
+                {Error && <p style={{color:'red'}}> Login failed. Please try again. </p>} 
+
+                {/* if the user want to make a new acc redirect them to the signup page */}
+                <Link to='../Signup'>Not a member yet? Join now for free!</Link>
                 
             </div>
         </>
