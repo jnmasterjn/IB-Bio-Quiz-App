@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { login } from "../../api.services/api";
 import { Link, useNavigate} from "react-router-dom";
-import './Signin.css'
 
 
 function Signin() {
@@ -11,7 +10,6 @@ function Signin() {
     const [Error, setError ] = useState(false)
 
     const handleLogin = (e) => {
-
         e.preventDefault(); //prevent reloading the page
         const username = e.target.elements.username.value; //get user insert username from input field 
         const password = e.target.elements.password.value; //get user insert password from input field 
