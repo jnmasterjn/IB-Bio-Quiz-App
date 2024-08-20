@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { login } from "../../api.services/api";
 import { Link, useNavigate} from "react-router-dom";
+import { useAuth } from "../authentication/Auth";
 
 
 function Signin() {
 
-    const path = useNavigate()
+    const path = useNavigate() //used to redirect user to other pages once signed in
+
+    const {login: authLogin} = useAuth() //rename login from auth.jsx to use authLogin
 
     const [Error, setError ] = useState(false)
 
@@ -16,7 +19,8 @@ function Signin() {
 
         login(username, password) //call login function with the received username and password
             .then(() => {
-                path('../game') //if they login they can go to the game page.
+                authLogin() //updates the isLoggedIn state in your authentication context, mark user as logged in
+                path('../home') //if they login they can go to the game page.
             })
 
             .catch(() => {
