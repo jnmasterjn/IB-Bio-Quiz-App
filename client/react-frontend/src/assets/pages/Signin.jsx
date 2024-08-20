@@ -30,7 +30,7 @@ function Signin() {
 
     return (
         <>
-            <h1>Login</h1>
+            <h1>Welcome back, Please Login</h1>
             <div>
                 <form onSubmit={handleLogin}>
                     <label> Username: </label>
@@ -38,6 +38,7 @@ function Signin() {
                     <br/>
                     <label> Password: </label>
                     <input type="password" placeholder="Insert your password" name="password"></input>
+                    <br/>
                     <br/>
                     <button type="submit">Login</button>
                     <br/>
@@ -47,6 +48,7 @@ function Signin() {
                 {Error && <p style={{color:'red'}}> Login failed. Please try again. </p>} 
 
                 {/* if the user want to make a new acc redirect them to the signup page */}
+                <br/>
                 <Link to='../Signup'>Not a member yet? Join now for free!</Link>
                 
             </div>

@@ -26,7 +26,7 @@ function Signup() {
 
     return (
         <>
-            <h1>Signup</h1>
+            <h1>Join the Fun</h1>
             <div>
                 <form onSubmit={handleSignup}>
                     <label> Username: </label>
@@ -42,8 +42,9 @@ function Signup() {
 
                 {/* check the value of Error, if it's true generate the <p> */}
                 {Error && <p style={{color:'red'}}> Error. Account already exsist. </p>} 
-
-                <Link to='../Signin'>Already have an account? Sign in here!</Link>
+                
+                <br/>
+                <Link to='../Signin'>Already have an account? Sign in here</Link>
                 
             </div>
         </>
