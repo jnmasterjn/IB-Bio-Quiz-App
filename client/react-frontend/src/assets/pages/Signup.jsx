@@ -43,7 +43,7 @@ function Signup() {
                 {/* check the value of Error, if it's true generate the <p> */}
                 {Error && <p style={{color:'red'}}> Error. Account already exsist. </p>} 
 
-                <Link to='../Signin'>Back to Login Page</Link>
+                <Link to='../Signin'>Already have an account? Sign in here!</Link>
                 
             </div>
         </>

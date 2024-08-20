@@ -4,7 +4,8 @@ import Signin from './assets/pages/Signin'
 import Signup from './assets/pages/Signup'
 import Game from './assets/pages/Game'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-//need to download from terminal, it's a library
+import { AuthProvider } from './assets/authentication/Auth'
+import ProtectedRoute from './assets/authentication/ProtectRoute'
 
 const myrouter = createBrowserRouter([
   {
@@ -19,13 +20,15 @@ const myrouter = createBrowserRouter([
 
   {
     path:"game",
-    element: <Game/>
+    element: <ProtectedRoute element ={<Game/>}/>
   }
 
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router = {myrouter}/>
+      <AuthProvider>
+        <RouterProvider router = {myrouter}/>
+      </AuthProvider>
   </React.StrictMode>
 )
