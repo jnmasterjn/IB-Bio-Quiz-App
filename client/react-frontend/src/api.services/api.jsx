@@ -11,3 +11,7 @@ export const signup = (username, password) => {
 export const login = (username, password) => {
     return axios.post(`${API_URL}/login/`, {username:username, password:password}) //username and password is data payload
 }
+
+export const quiz = () => {
+    return axios.get(`${API_URL}/quiz/`)
+}
