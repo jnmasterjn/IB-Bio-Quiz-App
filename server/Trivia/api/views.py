@@ -62,3 +62,13 @@ from rest_framework.permissions import IsAuthenticated
 
 def test_token(request):
     return Response("passed for {}".format(request.user.username))
+
+
+from .models import Quiz
+from .serializer import QuizSerializer
+
+@api_view(["GET"])
+def get_quiz(request):
+    quiz = Quiz.objects.all() #get everything from the quiz object (database)
+    serializer = QuizSerializer(quiz, many=True) #serailze the data 
+    return Response(serializer.data) #return the serialzed data
