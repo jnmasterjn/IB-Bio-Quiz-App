@@ -9,7 +9,7 @@ function Home(){
         <>
         <h1>Home</h1>
         <h2>Welcome back, {name} ! </h2>
-        <Link to='../game'><button>Game</button></Link>
+        <Link to='../rule'><button>Game</button></Link>
         <Link to='../leaderboard'><button>LeaderBoard</button></Link>
         </>
     )
