@@ -1,7 +1,7 @@
 import {quiz} from "../../api.services/api.jsx"
 import { useState, useEffect } from "react"
 import FisherShuffle from '../logic/Shuffle.js'
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 import '../css/Test.css'
 
 
@@ -88,7 +88,7 @@ function Game(){
     },1000) //one seconds before next question
     }
 
-    return (
+    return (<>
         <div>
             <h4>Game Page</h4>
             <h4>Time Left: {TimeLeft}</h4>
@@ -100,6 +100,7 @@ function Game(){
                 </button>
             ))}
         </div>
+        </>
     );
 }
 

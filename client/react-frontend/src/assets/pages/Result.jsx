@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 
 
@@ -11,7 +11,10 @@ function Result(){
     return(
     <>
         <h1>Result: </h1>
-        <div><h2>Your Score is {Score}/10</h2></div>
+        <div><h2>Congrats! Your Score is</h2></div>
+        <h1>{Score}/10</h1>
+        <Link to='../rule'><button>Play Another Round</button></Link>
+        <Link to='../home'><button>Home Page</button></Link>
     </>
     )
 }

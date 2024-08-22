@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"
 
 function Rule(){
 
@@ -7,18 +7,18 @@ function Rule(){
         <h3>Hello Player</h3>
     <div>
         <h2>Welcome to the game! Here are the rules:</h2>
-            <li>Time Limit: You have 5 seconds to answer each question.</li>
+            <li><b>Time Limit:</b> You have 5 seconds to answer each question.</li>
                 <br/>
-            <li>Scoring: You will earn 1 point for each correct answer.</li>
+            <li><b>Scoring:</b> You will earn 1 point for each correct answer.</li>
                 <br/>
-            <li>Rounds: Each round consists of 10 questions.</li>
+            <li><b>Rounds:</b> Each round consists of 10 questions.</li>
                 <br/>
-            <li>Starting the Game: The game will begin immediately after you press the "Start Game" button, so be ready!</li>
+            <li><b>Starting the Game:</b> The game will begin immediately after you press the "Start Game" button, so be ready!</li>
                 <br/>
     </div>
 
 
-        <Link to='../game'><button>Game</button></Link>
+        <Link to='../game'><button>Start Game</button></Link>
         </>
     )
 }
