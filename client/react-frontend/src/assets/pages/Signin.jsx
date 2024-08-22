@@ -20,6 +20,9 @@ function Signin() {
         login(username, password) //call login function with the received username and password
             .then(() => {
                 authLogin() //updates the isLoggedIn state in your authentication context, mark user as logged in
+                
+                localStorage.setItem('name', username) //store the user's login name to display on home page, name is the variable
+
                 path('../home') //if they login they can go to the game page.
             })
 
