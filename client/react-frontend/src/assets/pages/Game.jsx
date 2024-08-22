@@ -8,8 +8,7 @@ function Game(){
 
     const [questions, SetQuestions] = useState([])
     const [CurrentQuestionIndex, SetCurrentQuestionIndex] = useState(0) //keep track of the current question's index, start with [0]
-    const [selected, SetSelected] = useState(null)
-    const [isCorrect, SetIsCorrect] = useState(null)
+    const [hasAnswered, SetHasAnswered] = useState(false)
     
 
     useEffect( () => {
@@ -36,7 +35,7 @@ function Game(){
         )
     }      
 
-    const currentQuestion = questions[CurrentQuestionIndex] //very important line
+    let currentQuestion = questions[CurrentQuestionIndex] //very important line
 
     //ensure the question and options are already defined before rendering it to user
     if (!currentQuestion || !currentQuestion.options) {
@@ -44,11 +43,19 @@ function Game(){
     }
 
     const HandleUserAnswer = (selectedAnswer) => {
+
+        if (hasAnswered === true){
+            return
+        }
+
+
         if (selectedAnswer === currentQuestion.answer){
             console.log('correct')
         }else{
             console.log('incorrect')
         }
+
+        SetHasAnswered(true) //has answered the question, so can't press the buttons again
         
         setTimeout( () => {
         if (CurrentQuestionIndex < questions.length-1){ //keep going to the next question when the questions are enough
@@ -56,6 +63,7 @@ function Game(){
         }else{
             alert('Quiz Completed')
         }
+        SetHasAnswered(false)
     },1000) //one seconds before next question
     }
 
