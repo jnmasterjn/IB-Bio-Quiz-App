@@ -1,14 +1,18 @@
-import {quiz} from "../../api.services/api"
+import {quiz} from "../../api.services/api.jsx"
 import { useState, useEffect } from "react"
-import FisherShuffle from './Shuffle.js'
+import FisherShuffle from '../logic/Shuffle.js'
+import {useNavigate} from "react-router-dom";
 
 
 
 function Game(){
 
+    const path = useNavigate()
+
     const [questions, SetQuestions] = useState([])
     const [CurrentQuestionIndex, SetCurrentQuestionIndex] = useState(0) //keep track of the current question's index, start with [0]
-    const [hasAnswered, SetHasAnswered] = useState(false)
+    const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
+    const [Score, SetScore] = useState(0)
     
 
     useEffect( () => {
@@ -48,9 +52,9 @@ function Game(){
             return
         }
 
-
         if (selectedAnswer === currentQuestion.answer){
             console.log('correct')
+            SetScore(Score+1)
         }else{
             console.log('incorrect')
         }
@@ -58,15 +62,14 @@ function Game(){
         SetHasAnswered(true) //has answered the question, so can't press the buttons again
         
         setTimeout( () => {
-        if (CurrentQuestionIndex < questions.length-1){ //keep going to the next question when the questions are enough
+        if (CurrentQuestionIndex < 9){ //10 questions per round
             SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
         }else{
-            alert('Quiz Completed')
+            path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         }
         SetHasAnswered(false)
     },1000) //one seconds before next question
     }
-
 
     return (
         <div>

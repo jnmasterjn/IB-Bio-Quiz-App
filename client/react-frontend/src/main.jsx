@@ -5,6 +5,7 @@ import Signup from './assets/pages/Signup'
 import Game from './assets/pages/Game'
 import Leaderboard from './assets/pages/Dashboard'
 import Home from './assets/pages/Home'
+import Result from './assets/pages/Result'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './assets/authentication/Auth'
 import ProtectedRoute from './assets/authentication/ProtectRoute'
@@ -32,7 +33,12 @@ const myrouter = createBrowserRouter([
 
   {
     path:"Leaderboard",
-    element: <ProtectedRoute element ={<Leaderboard/>}/>}
+    element: <ProtectedRoute element ={<Leaderboard/>}/>
+  },
+  {
+    path:"Result",
+    element:<Result/>
+  }
   
 
 ])
