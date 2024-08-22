@@ -55,10 +55,18 @@ function Game(){
 
     const HandleUserAnswer = (selectedAnswer) => {
         if (selectedAnswer === currentQuestion.answer){
-            SetIsCorrect(true)
+            console.log('correct')
         }else{
-            SetIsCorrect(false)
+            console.log('incorrect')
         }
+        
+        setTimeout( () => {
+        if (CurrentQuestionIndex < questions.length-1){ //keep going to the next question when the questions are enough
+            SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
+        }else{
+            alert('Quiz Completed')
+        }
+    },1000) //1 seconds before next question
     }
 
 
@@ -71,8 +79,6 @@ function Game(){
                     {option}
                 </button>
             ))}
-            {isCorrect === true && <p style ={{color:'green'}}>Correct!</p>}
-            {isCorrect === false && <p style ={{color:'red'}}>Failed</p>}
         </div>
     );
 }
