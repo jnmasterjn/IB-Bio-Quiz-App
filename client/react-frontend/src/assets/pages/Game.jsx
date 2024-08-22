@@ -1,5 +1,6 @@
 import {quiz} from "../../api.services/api"
 import { useState, useEffect } from "react"
+import FisherShuffle from './Shuffle.js'
 
 
 
@@ -29,17 +30,6 @@ function Game(){
     },[]
     ) //renders once element mounts, fetch data from server
 
-
-    function FisherShuffle(array){
-        let i = array.length-1 //the last index
-
-        for (; i > 0;i--){ 
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i],array[j]] = [array[j],array[i]]
-        }
-        return array
-    }
-
     if (questions.length === 0){
         return(
             <div>Loading....</div>
@@ -50,7 +40,7 @@ function Game(){
 
     //ensure the question and options are already defined before rendering it to user
     if (!currentQuestion || !currentQuestion.options) {
-        return <div>Loading question...</div>;
+        return <div>Loading question....</div>;
     }
 
     const HandleUserAnswer = (selectedAnswer) => {
@@ -66,7 +56,7 @@ function Game(){
         }else{
             alert('Quiz Completed')
         }
-    },1000) //1 seconds before next question
+    },1000) //one seconds before next question
     }
 
 
