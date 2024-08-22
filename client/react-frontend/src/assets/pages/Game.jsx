@@ -13,6 +13,7 @@ function Game(){
     const [CurrentQuestionIndex, SetCurrentQuestionIndex] = useState(0) //keep track of the current question's index, start with [0]
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
+    const [TimeLeft, SetTimeLeft] = useState(5) //5 seconds for each question
     
 
     useEffect( () => {
@@ -32,6 +33,20 @@ function Game(){
             })
     },[]
     ) //renders once element mounts, fetch data from server
+
+    useEffect( () => {
+        if (TimeLeft > 0){
+            const timer = setTimeout( () => {
+                SetTimeLeft(TimeLeft-1)
+            },1000)
+
+            return ()=> clearTimeout(timer) //clear the timer when components unmounts / timeLeft changes
+
+            }else{
+                HandleUserAnswer(null) //if the timer runs out
+            } 
+        },
+        [TimeLeft])
 
     if (questions.length === 0){
         return(
@@ -64,6 +79,7 @@ function Game(){
         setTimeout( () => {
         if (CurrentQuestionIndex < 9){ //10 questions per round
             SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
+            SetTimeLeft(5)
         }else{
             path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         }
@@ -74,7 +90,8 @@ function Game(){
     return (
         <div>
             <h1>Game Page</h1>
-            <h2>Question: {currentQuestion.question}</h2>
+            <h1>{TimeLeft}</h1>
+            <h2>Question {CurrentQuestionIndex+1}: {currentQuestion.question}</h2>
             {currentQuestion.options.map((option, index) => (
                 <button key={index} onClick={() => HandleUserAnswer(option)}>
                     {option}

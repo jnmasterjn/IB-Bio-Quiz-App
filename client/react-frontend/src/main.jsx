@@ -37,7 +37,7 @@ const myrouter = createBrowserRouter([
   },
   {
     path:"Result",
-    element:<Result/>
+    element: <ProtectedRoute element ={<Result/>}/>
   }
   
 
