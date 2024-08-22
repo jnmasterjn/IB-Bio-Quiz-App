@@ -1,0 +1,62 @@
+/* Root styles */
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #f44336; /* Red */
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --button-color: #008CBA; /* Blue */
+    --button-hover-color: #005f6b;
+    --button-text-color: #fff;
+}
+
+/* Apply the root styles */
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

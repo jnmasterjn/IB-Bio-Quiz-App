@@ -2,6 +2,7 @@ import {quiz} from "../../api.services/api.jsx"
 import { useState, useEffect } from "react"
 import FisherShuffle from '../logic/Shuffle.js'
 import {useNavigate} from "react-router-dom";
+import '../css/Test.css'
 
 
 
