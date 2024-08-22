@@ -14,13 +14,26 @@ function Game(){
     useEffect( () => {
         quiz()
             .then( (serverresponse) => {
-                SetQuestions(serverresponse.data)
+                const RandomQuestion = ShuffleQuestions(serverresponse.data) 
+                SetQuestions(RandomQuestion)
             })
             .catch( (error) => {
                 console.error(error)
             })
     },[]
-    )
+    ) //renders once element mounts, fetch data from server
+
+
+    function ShuffleQuestions(questionarray){
+        let i = questionarray.length-1 //the last index
+
+        for (; i > 0;i--){ 
+            const j = Math.floor(Math.random() * (i + 1));
+            [questionarray[i],questionarray[j]] = [questionarray[j],questionarray[i]]
+        }
+        return questionarray
+    }
+
 
     return(
     <div>

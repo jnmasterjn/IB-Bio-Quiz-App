@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 class QuizSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quiz 
-        fields = ['question', 'optionOne', 'optionTwo', 'optionThree'] #exclude answer from being expose to user, don't send to frontend
+        fields = ['question', 'optionOne', 'optionTwo', 'optionThree','answer'] 
 
 class GameStatsSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username',read_only=True) #the username is from user model
