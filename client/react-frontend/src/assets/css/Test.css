@@ -38,6 +38,14 @@ h2 {
     font-size: 1.5rem;
 }
 
+label {
+    margin-top: 20px;
+}
+
+input{
+    margin-top: 20px;
+}
+
 /* Button styles */
 button {
     width: 100%;

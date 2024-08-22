@@ -90,9 +90,10 @@ function Game(){
 
     return (
         <div>
-            <h1>Game Page</h1>
-            <h1>{TimeLeft}</h1>
-            <h2>Question {CurrentQuestionIndex+1}: {currentQuestion.question}</h2>
+            <h4>Game Page</h4>
+            <h4>Time Left: {TimeLeft}</h4>
+            <h1>Question {CurrentQuestionIndex+1}</h1>
+            <h2>{currentQuestion.question}</h2>
             {currentQuestion.options.map((option, index) => (
                 <button key={index} onClick={() => HandleUserAnswer(option)}>
                     {option}
