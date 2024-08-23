@@ -91,9 +91,8 @@ function Game(){
     },1000) //one seconds before next question
     }
 
-    //matching views.py update score function
-    const SubmitScore = (score) =>{
-        return axios.post(`${API_URL}/score/`, {gamescore: score}) //score is the payload send to the backend function
+    const SubmitScore = (gamescore) =>{
+        return axios.post(`${API_URL}/score/`, {score: gamescore}) //score is the payload send to the backend function
 
         .then( (response) =>{
             console.log("success sending score", response.data)

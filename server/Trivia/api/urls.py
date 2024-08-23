@@ -6,6 +6,6 @@ urlpatterns = [
     path("signup/", views.signup, name = "signup"),
     path("token/", views.test_token, name = "test_token"),
     path("quiz/", views.get_quiz, name = "quiz"),
-    path("score/", views.update_score, name = "score"),
+    path("score/", views.update_score, name = "update_score"),
     path("leaderboard/", views.leaderboard, name = "leaderboard")
 ]

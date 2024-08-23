@@ -86,7 +86,7 @@ def update_score(request):
         return Response({"error": "user is not logged in."}, status=400)
     
     #get the 'score' value from request
-    gamescore = request.data.get('score')
+    gamescore = request.data.get('score') #backend is expecting a key named 'score' in the incoming request data.
 
     if gamescore is None:
         return Response({"error": "game score missing"}, status=400)
