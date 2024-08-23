@@ -15,6 +15,7 @@ function Game(){
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
     const [TimeLeft, SetTimeLeft] = useState(5) //5 seconds for each question
+
     
 
     useEffect( () => {
