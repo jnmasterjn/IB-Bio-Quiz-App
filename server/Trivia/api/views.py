@@ -94,7 +94,7 @@ def update_score(request):
     #create a record if the user first time playing, update score if user already has a score field
     gamestats, created = GameStats.objects.get_or_create(user=user)
 
-    gamestats.score = int(gamescore)
+    gamestats.score += gamescore #the score is added on every round
 
     #store in database
     gamestats.save()
