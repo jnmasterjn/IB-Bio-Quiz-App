@@ -80,7 +80,7 @@ function Game(){
         SetHasAnswered(true) //has answered the question, so can't press the buttons again
         
         setTimeout( () => {
-        if (CurrentQuestionIndex < 9){ //10 questions per round
+        if (CurrentQuestionIndex < 2){ //10 questions per round
             SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
             SetTimeLeft(5)
         }else{
@@ -91,14 +91,24 @@ function Game(){
     },1000) //one seconds before next question
     }
 
-    const SubmitScore = (gamescore) =>{
-        return axios.post(`${API_URL}/score/`, {score: gamescore}) //score is the payload send to the backend function
+    const SubmitScore = (score) => {
 
+        const token = localStorage.getItem('token')
+
+        return axios.post(`${API_URL}/score/`, 
+        {score: score}, //score is the payload send to the backend function
+            {
+                headers: { 'Authorization': `Token ${token}`}
+            }
+        ) 
         .then( (response) =>{
             console.log("success sending score", response.data)
         })
 
         .catch( (error) =>{
+            if (error.response){
+                console.log("failed sending score, response data:", error.response.data)
+            }
             console.log("failed sending score", error)
         })
     }

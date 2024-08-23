@@ -90,11 +90,11 @@ def update_score(request):
 
     if gamescore is None:
         return Response({"error": "game score missing"}, status=400)
-
+    
     #create a record if the user first time playing, update score if user already has a score field
     gamestats, created = GameStats.objects.get_or_create(user=user)
 
-    gamestats.score = gamescore 
+    gamestats.score = int(gamescore)
 
     #store in database
     gamestats.save()
