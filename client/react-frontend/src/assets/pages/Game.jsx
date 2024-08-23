@@ -3,10 +3,13 @@ import { useState, useEffect } from "react"
 import FisherShuffle from '../logic/Shuffle.js'
 import {useNavigate, Link} from "react-router-dom";
 import '../css/Test.css'
+import axios from 'axios';
 
 
 
 function Game(){
+
+    const API_URL = 'http://127.0.0.1:8000'
 
     const path = useNavigate()
 
@@ -15,8 +18,6 @@ function Game(){
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
     const [TimeLeft, SetTimeLeft] = useState(5) //5 seconds for each question
-
-    
 
     useEffect( () => {
         quiz()
@@ -83,11 +84,26 @@ function Game(){
             SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
             SetTimeLeft(5)
         }else{
+            SubmitScore(Score) //send user score to the backend
             path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         }
         SetHasAnswered(false)
     },1000) //one seconds before next question
     }
+
+    //matching views.py update score function
+    const SubmitScore = (score) =>{
+        return axios.post(`${API_URL}/score/`, {gamescore: score}) //score is the payload send to the backend function
+
+        .then( (response) =>{
+            console.log("success sending score", response.data)
+        })
+
+        .catch( (error) =>{
+            console.log("failed sending score", error)
+        })
+    }
+
 
     return (<>
         <div>

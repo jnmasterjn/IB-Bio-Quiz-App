@@ -34,7 +34,7 @@ const myrouter = createBrowserRouter([
 
   {
     path:"Leaderboard",
-    element: <ProtectedRoute element ={<Leaderboard/>}/>
+    element: <Leaderboard/>
   },
 
   {

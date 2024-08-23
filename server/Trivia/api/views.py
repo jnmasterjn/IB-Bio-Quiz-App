@@ -75,14 +75,21 @@ def get_quiz(request):
 
 from .models import GameStats
 
+#saves the user score (in the database) after they are redirected back to the result page
 @api_view(["POST"])
 def update_score(request):
 
     #logged in user, djgnao handles the authentication
     user = request.user 
 
+    if not user.is_authenticated:
+        return Response({"error": "user is not logged in."}, status=400)
+    
     #get the 'score' value from request
     gamescore = request.data.get('score')
+
+    if gamescore is None:
+        return Response({"error": "game score missing"}, status=400)
 
     #create a record if the user first time playing, update score if user already has a score field
     gamestats, created = GameStats.objects.get_or_create(user=user)
