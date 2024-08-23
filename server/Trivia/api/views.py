@@ -72,3 +72,36 @@ def get_quiz(request):
     quiz = Quiz.objects.all() #get everything from the quiz object (database)
     serializer = QuizSerializer(quiz, many=True) #serailze the data 
     return Response(serializer.data) #return the serialzed data
+
+from .models import GameStats
+
+@api_view(["POST"])
+def update_score(request):
+
+    #logged in user, djgnao handles the authentication
+    user = request.user 
+
+    #get the 'score' value from request
+    gamescore = request.data.get('score')
+
+    #create a record if the user first time playing, update score if user already has a score field
+    gamestats, created = GameStats.objects.get_or_create(user=user)
+
+    gamestats.score = gamescore 
+
+    #store in database
+    gamestats.save()
+
+    return Response({'message':"score updated"})
+
+
+from .serializer import GameStatsSerializer
+
+@api_view(["GET"])
+def leaderboard(request):
+    rank = GameStats.objects.order_by('-score')[:10] #gets top 20 player by score, in descending order
+    serializer = GameStatsSerializer(rank, many=True)
+
+    return Response(serializer.data)
+
+    
