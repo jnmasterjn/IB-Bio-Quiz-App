@@ -106,7 +106,7 @@ from .serializer import GameStatsSerializer
 
 @api_view(["GET"])
 def leaderboard(request):
-    rank = GameStats.objects.order_by('-score')[:10] #gets top 20 player by score, in descending order
+    rank = GameStats.objects.order_by('-score')[:10] #gets top 10 player by score, in descending order
     serializer = GameStatsSerializer(rank, many=True)
 
     return Response(serializer.data)

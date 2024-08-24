@@ -82,7 +82,7 @@ function Game(){
         SetHasAnswered(true) //has answered the question, so can't press the buttons again
         
         setTimeout( () => {
-        if (CurrentQuestionIndex < 2){ //10 questions per round
+        if (CurrentQuestionIndex < 9){ //10 questions per round
             SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
             SetTimeLeft(5)
         }else{
@@ -119,7 +119,7 @@ function Game(){
     return (<>
         <div>
             <h4>Game Page</h4>
-            <h6>{name}</h6>
+            <h6>Player: {name}</h6>
             <h4>Time Left: {TimeLeft}</h4>
             <h1>Question {CurrentQuestionIndex+1}</h1>
             <h2>{currentQuestion.question}</h2>
