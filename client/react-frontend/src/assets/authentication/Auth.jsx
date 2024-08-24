@@ -14,6 +14,8 @@ export const AuthProvider = ({children}) => {
     }
 
     const logout = () => {
+        localStorage.removeItem('token')
+        localStorage.removeItem('name') //remove name and token when logging out
         setIsLoggedin(false)
     }
 

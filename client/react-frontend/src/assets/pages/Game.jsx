@@ -9,6 +9,8 @@ import axios from 'axios';
 
 function Game(){
 
+    const name = localStorage.getItem('name')
+
     const API_URL = 'http://127.0.0.1:8000'
 
     const path = useNavigate()
@@ -98,7 +100,7 @@ function Game(){
         return axios.post(`${API_URL}/score/`, 
         {score: score}, //score is the payload send to the backend function
             {
-                headers: { 'Authorization': `Token ${token}`}
+                headers: { 'Authorization': `Token ${token}`} //make sure user is logged in
             }
         ) 
         .then( (response) =>{
@@ -117,6 +119,7 @@ function Game(){
     return (<>
         <div>
             <h4>Game Page</h4>
+            <h6>{name}</h6>
             <h4>Time Left: {TimeLeft}</h4>
             <h1>Question {CurrentQuestionIndex+1}</h1>
             <h2>{currentQuestion.question}</h2>

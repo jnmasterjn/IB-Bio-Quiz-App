@@ -2,9 +2,11 @@ import {Link} from "react-router-dom"
 
 function Rule(){
 
+    const name = localStorage.getItem('name')
+
     return(
         <>
-        <h3>Hello Player</h3>
+        <h3>Hello, Player {name} </h3>
     <div>
         <h2>Welcome to the game! Here are the rules:</h2>
             <li><b>Time Limit:</b> You have 5 seconds to answer each question.</li>
