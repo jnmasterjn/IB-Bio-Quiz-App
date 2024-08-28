@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Leaderboard() {
 
@@ -27,6 +28,7 @@ function Leaderboard() {
                 ))}
             </ul>
         </div>
+        <Link to='../Home'><button>Back to home</button></Link>
         </>
     );
 }

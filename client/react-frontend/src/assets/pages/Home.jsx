@@ -20,7 +20,6 @@ function Home(){
         <h2>Welcome back, {name} ! </h2>
         <Link to='../rule'><button>Game</button></Link>
         <Link to='../leaderboard'><button>LeaderBoard</button></Link>
-        <Link to='../signin'><button>Back To Login Page</button></Link>
 
         <button onClick={HandleLogout}>Logout</button>
         </>

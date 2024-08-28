@@ -21,6 +21,7 @@ function Rule(){
 
 
         <Link to='../game'><button>Start Game</button></Link>
+        <Link to='../home'><button>Back to Home</button></Link>
         </>
     )
 }

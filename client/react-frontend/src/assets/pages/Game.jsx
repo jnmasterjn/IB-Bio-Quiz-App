@@ -119,7 +119,7 @@ function Game(){
     return (<>
         <div>
             <h4>Game Page</h4>
-            <h6>Player: {name}</h6>
+            <h4>Player: {name}</h4>
             <h4>Time Left: {TimeLeft}</h4>
             <h1>Question {CurrentQuestionIndex+1}</h1>
             <h2>{currentQuestion.question}</h2>
@@ -129,6 +129,7 @@ function Game(){
                 </button>
             ))}
         </div>
+        <h5><Link to = '../home'>Back To Home</Link></h5>
         </>
     );
 }
