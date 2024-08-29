@@ -129,7 +129,7 @@ function Game(){
                 </button>
             ))}
         </div>
-        <h5><Link to = '../home'>Back To Home</Link></h5>
+        <h5><Link to = '../home'>Quit Game</Link></h5>
         </>
     );
 }
