@@ -20,6 +20,9 @@ function Game(){
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
     const [TimeLeft, SetTimeLeft] = useState(5) //5 seconds for each question
+    const [IsCorrect, SetIsCorrect] = useState(false)
+    const [SelectedOption, SetSelectedOption] = useState(null)
+
 
     useEffect( () => {
         quiz()
@@ -75,6 +78,7 @@ function Game(){
         if (selectedAnswer === currentQuestion.answer){
             console.log('correct')
             SetScore(Score+1)
+            SetIsCorrect(true)
         }else{
             console.log('incorrect')
         }
@@ -89,7 +93,8 @@ function Game(){
             SubmitScore(Score) //send user score to the backend
             path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         }
-        SetHasAnswered(false)
+        SetHasAnswered(false),
+        SetSelectedOption(null)
     },1000) //one seconds before next question
     }
 
@@ -122,9 +127,16 @@ function Game(){
             <h4>Player: {name}</h4>
             <h4>Time Left: {TimeLeft}</h4>
             <h1>Question {CurrentQuestionIndex+1}</h1>
+
             <h2>{currentQuestion.question}</h2>
             {currentQuestion.options.map((option, index) => (
-                <button key={index} onClick={() => HandleUserAnswer(option)}>
+                <button key={index} 
+                        onClick={() => HandleUserAnswer(option)}
+                        style={{
+                            backgroundColor: hasAnswered && option === SelectedOption
+                                ? (IsCorrect ? 'green' : 'red')
+                                : ''
+                        }}>
                     {option}
                 </button>
             ))}
