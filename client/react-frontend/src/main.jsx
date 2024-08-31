@@ -29,12 +29,12 @@ const myrouter = createBrowserRouter([
 
   {
     path:"game",
-    element:<Game/>
+    element:<ProtectedRoute element ={<Game/>}/>
   },
 
   {
     path:"Leaderboard",
-    element: <Leaderboard/>
+    element: <ProtectedRoute element ={<Leaderboard/>}/>
   },
 
   {

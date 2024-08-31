@@ -20,8 +20,8 @@ function Game(){
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
     const [TimeLeft, SetTimeLeft] = useState(5) //5 seconds for each question
-    const [IsCorrect, SetIsCorrect] = useState(false)
-    const [SelectedOption, SetSelectedOption] = useState(null)
+    const [AnswerMessage, SetAnswerMessage] = useState("")
+    const [MessageColor, SetMessageColor] = useState('')
 
 
     useEffect( () => {
@@ -73,14 +73,24 @@ function Game(){
 
         if (hasAnswered === true){
             return
-        }
+        } //if user alr answered this question, they can't answer again
 
         if (selectedAnswer === currentQuestion.answer){
-            console.log('correct')
+            
             SetScore(Score+1)
-            SetIsCorrect(true)
+
+            SetMessageColor('green')
+            SetAnswerMessage("Your answer is CORRECT!")
+            
+            console.log(MessageColor)
+
+
         }else{
-            console.log('incorrect')
+
+            SetMessageColor('red')
+            SetAnswerMessage("Your answer is WRONG!")
+            
+            console.log(MessageColor)
         }
 
         SetHasAnswered(true) //has answered the question, so can't press the buttons again
@@ -93,10 +103,14 @@ function Game(){
             SubmitScore(Score) //send user score to the backend
             path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         }
-        SetHasAnswered(false),
-        SetSelectedOption(null)
-    },1000) //one seconds before next question
+        SetHasAnswered(false)
+
+        SetAnswerMessage("") //empty the message for next question
+
+
+    },1000) //one second before next question
     }
+
 
     const SubmitScore = (score) => {
 
@@ -131,15 +145,13 @@ function Game(){
             <h2>{currentQuestion.question}</h2>
             {currentQuestion.options.map((option, index) => (
                 <button key={index} 
-                        onClick={() => HandleUserAnswer(option)}
-                        style={{
-                            backgroundColor: hasAnswered && option === SelectedOption
-                                ? (IsCorrect ? 'green' : 'red')
-                                : ''
-                        }}>
+                        onClick={() => HandleUserAnswer(option)}>
                     {option}
                 </button>
             ))}
+
+            <p style={{color: MessageColor}}>{AnswerMessage}</p> 
+            
         </div>
         <h5><Link to = '../home'>Quit Game</Link></h5>
         </>
