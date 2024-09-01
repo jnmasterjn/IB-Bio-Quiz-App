@@ -104,7 +104,8 @@ function Game(){
             path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         }
         SetHasAnswered(false)
-
+        
+        SetMessageColor("") //set color to empty string
         SetAnswerMessage("") //empty the message for next question
 
 
@@ -151,7 +152,7 @@ function Game(){
             ))}
 
             <p style={{color: MessageColor}}>{AnswerMessage}</p> 
-            
+
         </div>
         <h5><Link to = '../home'>Quit Game</Link></h5>
         </>
