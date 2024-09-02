@@ -16,16 +16,16 @@ function Home(){
 
     return(
         <>
-        <h1>Home</h1>
-        <h2>Welcome back, {name} ! </h2>
-        <Link to='../rule'><button>Game</button></Link>
-        <Link to='../leaderboard'><button>LeaderBoard</button></Link>
+        <div>
+            <h1>Home</h1>
+            <h2>Welcome back, {name} ! </h2>
+            <Link to='../rule'><button>Game</button></Link>
+            <Link to='../leaderboard'><button>LeaderBoard</button></Link>
 
-        <button onClick={HandleLogout}>Logout</button>
+            <button onClick={HandleLogout}>Logout</button>
+        </div>
         </>
     )
 }
 
 export default Home 
-
-//add nav bar

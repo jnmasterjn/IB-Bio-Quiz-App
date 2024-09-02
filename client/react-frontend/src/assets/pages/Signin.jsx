@@ -38,6 +38,7 @@ function Signin() {
 
     return (
         <>
+        <div>
             <h1>Welcome back, Please Login</h1>
             <div>
                 <form onSubmit={handleLogin}>
@@ -60,6 +61,7 @@ function Signin() {
                 <Link to='../Signup'>Not a member yet? Join now for free!</Link>
                 
             </div>
+        </div>
         </>
     )
 }

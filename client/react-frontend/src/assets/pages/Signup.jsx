@@ -26,6 +26,7 @@ function Signup() {
 
     return (
         <>
+        <div>
             <h1>Join the Fun</h1>
             <div>
                 <form onSubmit={handleSignup}>
@@ -47,6 +48,7 @@ function Signup() {
                 <Link to='../Signin'>Already have an account? Sign in here</Link>
                 
             </div>
+        </div>
         </>
     )
 }

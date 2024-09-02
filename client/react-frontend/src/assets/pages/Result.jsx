@@ -10,11 +10,14 @@ function Result(){
 
     return(
     <>
+    <div>
         <h1>Result: </h1>
         <div><h2>Congrats! Your Score is</h2></div>
         <h1>{Score}/10</h1>
+        <h4>Score updated to database, please go to <Link to='../leaderboard'>Leaderboard</Link> page to see the rankings.</h4>
         <Link to='../rule'><button>Play Another Round</button></Link>
         <Link to='../home'><button>Home Page</button></Link>
+    </div>
     </>
     )
 }

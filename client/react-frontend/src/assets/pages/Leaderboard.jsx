@@ -27,8 +27,8 @@ function Leaderboard() {
                     <ol key={index}>{player.username}: {player.score}</ol>
                 ))}
             </ul>
-        </div>
         <Link to='../Home'><button>Back to home</button></Link>
+        </div>
         </>
     );
 }
