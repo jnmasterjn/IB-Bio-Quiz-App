@@ -137,7 +137,7 @@ function Game(){
 
     return (<>
     <div>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></link>
+    
         <div>
             <h4>Game Page</h4>
             <h4>Player: {name}</h4>
@@ -146,7 +146,7 @@ function Game(){
 
             <h2>{currentQuestion.question}</h2>
             {currentQuestion.options.map((option, index) => (
-                <button key={index}  type="button" class="btn btn-secondary btn-sm"
+                <button key={index} 
                         onClick={() => HandleUserAnswer(option)}>
                     {option}
                 </button>
