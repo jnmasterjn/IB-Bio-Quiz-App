@@ -27,7 +27,7 @@ function Signup() {
     return (
         <>
         <div>
-            <h1>Join the Fun</h1>
+            <h1>Create new account</h1>
             <div>
                 <form onSubmit={handleSignup}>
                     <label> Username: </label>

@@ -8,7 +8,7 @@ export const useAuth = () => useContext(AuthContext)
 export const AuthProvider = ({children}) => {
     
     const [isLoggedIn, setIsLoggedin] = useState(
-        localStorage.getItem('isLoggedIn'=== 'true')
+        localStorage.getItem('isLoggedIn') === 'true'
     )
 
     const login = () => {
