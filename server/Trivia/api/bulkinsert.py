@@ -295,3 +295,5 @@ quizzes = [
 with transaction.atomic():
     Quiz.objects.bulk_create(quizzes)
 
+Quiz.objects.all()
+
