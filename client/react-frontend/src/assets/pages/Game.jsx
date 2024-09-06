@@ -87,7 +87,8 @@ function Game(){
         }else{
 
             SetMessageColor('red')
-            SetAnswerMessage("Your answer is WRONG!")
+            console.log(currentQuestion.answer)
+            SetAnswerMessage(`Your answer is WRONG!, the corect asnwer is: ${currentQuestion.answer}`)
             
             console.log(MessageColor)
         }
