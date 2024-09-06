@@ -11,6 +11,8 @@ function Result(){
     return(
     <>
     <div>
+        <title>Result</title>
+        
         <h1>Result: </h1>
         <div><h2>Congrats! Your Score is</h2></div>
         <h1>{Score}/10</h1>

@@ -45,7 +45,7 @@ function Game(){
         if (TimeLeft > 0){
             const timer = setTimeout( () => {
                 SetTimeLeft(TimeLeft-1)
-            },1000)
+            },1500)
 
             return ()=> clearTimeout(timer) //clear the timer when components unmounts / timeLeft changes
 
@@ -139,7 +139,8 @@ function Game(){
     <div>
     
         <div>
-            <h4>Game Page</h4>
+            <title>Game</title>
+    
             <h4>Player: {name}</h4>
             <h4>Time Left: {TimeLeft}</h4>
             <h1>Question {CurrentQuestionIndex+1}</h1>

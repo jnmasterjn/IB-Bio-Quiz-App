@@ -26,6 +26,7 @@ function Signup() {
 
     return (
         <>
+        <title>Signup</title>
         <div>
             <h1>Create new account</h1>
             <div>

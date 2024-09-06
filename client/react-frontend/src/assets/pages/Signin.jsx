@@ -39,6 +39,7 @@ function Signin() {
     return (
         <>
         <div>
+            <title>Signin</title>
             <h1>Welcome back, Please Login</h1>
             <div>
                 <form onSubmit={handleLogin}>

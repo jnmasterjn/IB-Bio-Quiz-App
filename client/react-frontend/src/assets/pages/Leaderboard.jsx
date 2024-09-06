@@ -21,6 +21,7 @@ function Leaderboard() {
     return (
         <>
         <div>
+            <title>Leaderboard</title>
             <h1>Leaderboard</h1>
             <ul>
                 {rankings.map((player, index) => (
