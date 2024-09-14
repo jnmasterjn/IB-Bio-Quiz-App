@@ -45,7 +45,7 @@ function Game(){
         if (TimeLeft > 0){
             const timer = setTimeout( () => {
                 SetTimeLeft(TimeLeft-1)
-            },1500)
+            },2000)
 
             return ()=> clearTimeout(timer) //clear the timer when components unmounts / timeLeft changes
 
@@ -79,7 +79,7 @@ function Game(){
             SetScore(Score+1)
 
             SetMessageColor('green')
-            SetAnswerMessage("Your answer is CORRECT!")
+            SetAnswerMessage("CORRECT")
             
             console.log(MessageColor)
 
@@ -87,7 +87,7 @@ function Game(){
         }else{
 
             SetMessageColor('red')
-            SetAnswerMessage(`Your answer is WRONG!, the corect asnwer is: ${currentQuestion.answer}`)
+            SetAnswerMessage(`WRONG, corect answer: ${currentQuestion.answer}`)
             
             console.log(MessageColor)
         }
