@@ -23,11 +23,23 @@ function Leaderboard() {
         <div>
             <title>Leaderboard</title>
             <h1>Leaderboard</h1>
-            <ul>
+
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>User</th>
+                    <th>Score</th>
+                </tr>
+
                 {rankings.map((player, index) => (
-                    <ol key={index}>{player.username}: {player.score}</ol>
+                    <tr style = {{'textAlign':'left'}} key = {index}>
+                            <td>{index+1}</td>
+                            <td>{player.username}</td>
+                            <td>{player.score}</td>
+                    </tr>
                 ))}
-            </ul>
+            </table>
+        <br/>
         <Link to='../Home'><button>Back to home</button></Link>
         </div>
         </>
@@ -35,3 +47,7 @@ function Leaderboard() {
 }
 
 export default Leaderboard;
+
+
+
+

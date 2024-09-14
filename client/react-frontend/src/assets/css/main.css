@@ -11,5 +11,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Sofadi One'; /*from google fonts*/
     }
+
+td{
+    text-align: center;
+}
 
