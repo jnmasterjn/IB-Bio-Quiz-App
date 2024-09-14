@@ -4,8 +4,11 @@ function Rule(){
 
     const name = localStorage.getItem('name')
 
+    
+
     return(
         <>
+
         <title>Rule</title>
         <div>
         <h3>Hello, Player {name} </h3>

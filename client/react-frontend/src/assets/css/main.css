@@ -20,5 +20,8 @@ td{
 
 button{
     font-family: 'Sofadi One';
+    border-radius: 20px;
+    margin: 5px;
+    padding:5px;
 }
 

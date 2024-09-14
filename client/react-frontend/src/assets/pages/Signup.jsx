@@ -28,7 +28,7 @@ function Signup() {
         <>
         <title>Signup</title>
         <div>
-            <h1>Create new account</h1>
+            <h1>Create a new account</h1>
             <div>
                 <form onSubmit={handleSignup}>
                     <label> Username: </label>

@@ -4,9 +4,13 @@ import FisherShuffle from '../logic/Shuffle.js'
 import {useNavigate, Link} from "react-router-dom";
 import '../css/main.css'
 import axios from 'axios';
+import useSound from 'use-sound'
+import mySound from '../css/game.mp3'
 
 
 function Game(){
+
+    const [play,{stop}] = useSound(mySound);
 
     const name = localStorage.getItem('name')
 
@@ -137,7 +141,7 @@ function Game(){
 
     return (<>
     <div>
-    
+        <audio src={mySound} />
         <div>
             <title>Game</title>
     
@@ -153,6 +157,8 @@ function Game(){
                 </button>
             ))}
 
+            <button onClick={play}>play</button>
+            <button onClick={stop}>stop</button>
             <p style={{color: MessageColor}}>{AnswerMessage}</p>
 
         </div>
