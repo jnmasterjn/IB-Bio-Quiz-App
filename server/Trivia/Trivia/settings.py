@@ -132,4 +132,4 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_HEADERS = ['*']
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:5173'] #connect to react
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173', '192.168.1.108'] #connect to react
