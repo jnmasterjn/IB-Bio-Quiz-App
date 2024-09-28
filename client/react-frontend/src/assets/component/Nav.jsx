@@ -4,12 +4,14 @@ function NavBar(){
 return(
     <>
         <nav>
-            <ul>
-                <li><a href="/Home">Home</a></li>
-                <li><a href="/Leaderboard">About</a></li>
-                <li><a href="">Contact</a></li>
-
-            </ul>
+            <div>
+                <ul>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Contact">Contact</a></li>
+                    <li> <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="" /></li>
+                </ul>
+            </div>
         </nav>
     </>
 )

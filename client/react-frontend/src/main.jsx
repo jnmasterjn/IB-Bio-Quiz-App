@@ -7,6 +7,8 @@ import Leaderboard from './assets/pages/Leaderboard'
 import Home from './assets/pages/Home'
 import Result from './assets/pages/Result'
 import Rule from './assets/pages/Rule'
+import Contact from './assets/pages/Contact'
+import About from './assets/pages/About'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './assets/authentication/Auth'
 import ProtectedRoute from './assets/authentication/ProtectRoute'
@@ -24,7 +26,7 @@ const myrouter = createBrowserRouter([
   },
 
   {
-    path:"Home",
+    path:"home",
     element: <ProtectedRoute element ={<Home/>}/>
   },
 
@@ -34,19 +36,31 @@ const myrouter = createBrowserRouter([
   },
 
   {
-    path:"Leaderboard",
+    path:"leaderboard",
     element: <ProtectedRoute element ={<Leaderboard/>}/>
   },
 
   {
-    path:"Result",
+    path:"result",
     element: <ProtectedRoute element ={<Result/>}/>
   },
 
   {
     path:"Rule",
     element: <ProtectedRoute element ={<Rule/>}/>
+  },
+
+  {
+    path: "about",
+    element: <About/>
+  },
+
+  {
+    path: "contact",
+    element:<Contact/>
   }
+
+
 
   
 
