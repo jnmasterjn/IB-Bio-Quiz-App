@@ -8,7 +8,6 @@ import axios from 'axios';
 
 function Game(){
 
-
     const name = localStorage.getItem('name')
 
     const API_URL = 'http://127.0.0.1:8000'
@@ -139,7 +138,6 @@ function Game(){
 
     return (<>
     <div>
-        <audio src={mySound} />
         <div>
             <title>Game</title>
     

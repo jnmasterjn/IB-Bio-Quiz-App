@@ -5,8 +5,8 @@ return(
     <>
         <nav>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/Leaderboard">About</a></li>
                 <li><a href="">Contact</a></li>
 
             </ul>

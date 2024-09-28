@@ -2,7 +2,6 @@ import { useState } from "react";
 import { login } from "../../api.services/api";
 import { Link, useNavigate} from "react-router-dom";
 import { useAuth } from "../authentication/Auth";
-import NavBar from './../component/Nav'
 
 
 function Signin() {
@@ -39,7 +38,6 @@ function Signin() {
 
     return (
         <>
-        <NavBar/>
         <div>
             <title>Signin</title>
             <h1>Please Login</h1>

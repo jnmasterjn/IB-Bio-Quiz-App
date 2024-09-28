@@ -10,6 +10,7 @@ import Rule from './assets/pages/Rule'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './assets/authentication/Auth'
 import ProtectedRoute from './assets/authentication/ProtectRoute'
+import NavBar from './assets/component/Nav'
 
 const myrouter = createBrowserRouter([
   {
@@ -54,6 +55,7 @@ const myrouter = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
+      <NavBar/>
         <RouterProvider router = {myrouter}/>
       </AuthProvider>
   </React.StrictMode>
