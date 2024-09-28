@@ -4,7 +4,6 @@ import FisherShuffle from '../logic/Shuffle.js'
 import {useNavigate, Link} from "react-router-dom";
 import '../css/main.css'
 import axios from 'axios';
-import mySound from '../css/game.mp3'
 
 
 function Game(){
@@ -70,6 +69,7 @@ function Game(){
         return <div>Loading question....</div>;
     }
 
+    //main function
     const HandleUserAnswer = (selectedAnswer) => {
 
         if (hasAnswered === true){
