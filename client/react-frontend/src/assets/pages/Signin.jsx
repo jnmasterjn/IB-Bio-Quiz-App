@@ -39,7 +39,7 @@ function Signin() {
 
     return (
         <>
-        <div>
+        <div className="box">
             <title>Signin</title>
             <h1>Please Login</h1>
             <div>

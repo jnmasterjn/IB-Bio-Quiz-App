@@ -1,3 +1,9 @@
 .input-username{
     margin-bottom: 10px;
 }
+
+.box{
+    border-radius: 40px;
+    background-color: rgb(247, 217, 222);
+    padding: 50px;
+}

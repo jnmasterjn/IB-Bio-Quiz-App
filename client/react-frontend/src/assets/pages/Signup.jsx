@@ -27,8 +27,9 @@ function Signup() {
 
     return (
         <>
+        <div className="box">
+    
         <title>Signup</title>
-        <div>
             <h1>Create a new account</h1>
             <div>
                 <form onSubmit={handleSignup}>
