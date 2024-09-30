@@ -9,7 +9,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Sofadi One'; /*from google fonts*/
     }
 
 td{
@@ -17,7 +16,6 @@ td{
 }
 
 button{
-    font-family: 'Sofadi One';
     border-radius: 20px;
     margin: 5px;
     padding:5px;

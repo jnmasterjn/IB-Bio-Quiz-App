@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { signup } from "../../api.services/api"
+import "../css/home.css";
 
 
 
@@ -31,11 +32,9 @@ function Signup() {
             <h1>Create a new account</h1>
             <div>
                 <form onSubmit={handleSignup}>
-                    <label> Username: </label>
-                    <input type="text" placeholder="Insert your username" name="username"></input>
+                    <input type="text" placeholder="Username" name="username" className="input-username"></input>
                     <br/>
-                    <label> Password: </label>
-                    <input type="password" placeholder="Insert your password" name="password"></input>
+                    <input type="password" placeholder="Password" name="password" className="input-password"></input>
                     <br/>
                     <br/>
                     <button type="submit">Create my account</button>

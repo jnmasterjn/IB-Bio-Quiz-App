@@ -2,6 +2,7 @@ import { useState } from "react";
 import { login } from "../../api.services/api";
 import { Link, useNavigate} from "react-router-dom";
 import { useAuth } from "../authentication/Auth";
+import "../css/home.css";
 
 
 function Signin() {
@@ -43,11 +44,9 @@ function Signin() {
             <h1>Please Login</h1>
             <div>
                 <form onSubmit={handleLogin}>
-                    <label> Username: </label>
-                    <input type="text" placeholder="Insert your username" name="username"></input>
+                    <input type="text" placeholder="Username" name="username" className="input-username"></input>
                     <br/>
-                    <label> Password: </label>
-                    <input type="password" placeholder="Insert your password" name="password"></input>
+                    <input type="password" placeholder="Password" name="password" className="input-password"></input>
                     <br/>
                     <br/>
                     <button type="submit">Login</button>
