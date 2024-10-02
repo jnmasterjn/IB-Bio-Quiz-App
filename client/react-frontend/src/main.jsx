@@ -8,6 +8,7 @@ import Home from './assets/pages/Home'
 import Result from './assets/pages/Result'
 import Rule from './assets/pages/Rule'
 import Contact from './assets/pages/Contact'
+import Review from './assets/pages/Review'
 import About from './assets/pages/About'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './assets/authentication/Auth'
@@ -58,11 +59,14 @@ const myrouter = createBrowserRouter([
   {
     path: "contact",
     element:<Contact/>
+  }, 
+
+  {
+    path: "review",
+    element:<Review/>
+
   }
 
-
-
-  
 
 ])
 

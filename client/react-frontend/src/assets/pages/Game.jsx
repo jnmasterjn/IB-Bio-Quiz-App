@@ -21,6 +21,8 @@ function Game(){
     const [TimeLeft, SetTimeLeft] = useState(5) //5 seconds for each question
     const [AnswerMessage, SetAnswerMessage] = useState("")
     const [MessageColor, SetMessageColor] = useState('')
+    const [IncorrectAnswers, SetIncorrectAnswers] = useState([])
+    
 
 
     useEffect( () => {
@@ -75,6 +77,21 @@ function Game(){
             return
         } //if user alr answered this question, they can't answer again
 
+         // Track incorrect answers
+        let newIncorrectAnswers = [...IncorrectAnswers];
+
+        if (selectedAnswer !== currentQuestion.answer) {
+        // Save incorrect answer details
+        newIncorrectAnswers.push({
+            question: currentQuestion.question,
+            correctAnswer: currentQuestion.answer,
+            userAnswer: selectedAnswer,
+        });
+    }
+        // Update state and localStorage
+        SetIncorrectAnswers(newIncorrectAnswers);
+        localStorage.setItem('incorrectAnswers', JSON.stringify(newIncorrectAnswers));
+
         if (selectedAnswer === currentQuestion.answer){
             
             SetScore(Score+1)
@@ -84,11 +101,10 @@ function Game(){
             
             console.log(MessageColor)
 
-
         }else{
 
             SetMessageColor('red')
-            SetAnswerMessage(`WRONG, corect answer: ${currentQuestion.answer}`)
+            SetAnswerMessage(`WRONG, correct answer: ${currentQuestion.answer}`)
             
             console.log(MessageColor)
         }
