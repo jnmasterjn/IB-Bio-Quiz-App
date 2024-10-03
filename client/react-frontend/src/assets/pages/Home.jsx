@@ -16,6 +16,7 @@ function Home(){
 
     return(
         <>
+        <div className="box">
         <title>Home</title>
         <div>
             <h2>Welcome back, {name} ! </h2>
@@ -28,6 +29,7 @@ function Home(){
             <Link to='../leaderboard'><button>LeaderBoard</button></Link>
 
             <button onClick={HandleLogout}>Logout</button>
+        </div>
         </div>
         </>
     )

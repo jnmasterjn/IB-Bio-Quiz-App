@@ -20,7 +20,7 @@ function Leaderboard() {
 
     return (
         <>
-        <div>
+        <div className='box'>
             <title>Leaderboard</title>
             <h1>Leaderboard</h1>
 

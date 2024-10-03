@@ -153,7 +153,7 @@ function Game(){
 
 
     return (<>
-    <div>
+    <div className="box">
         <div>
             <title>Game</title>
     

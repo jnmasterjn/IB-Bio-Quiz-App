@@ -8,7 +8,7 @@ function Rule(){
 
     return(
         <>
-
+        <div className="box">
         <title>Rule</title>
         <div>
         <h3>Hello, Player {name} </h3>
@@ -28,6 +28,7 @@ function Rule(){
         <Link to='../game'><button>Start Game</button></Link>
         <Link to='../home'><button>Back to Home</button></Link>
 
+        </div>
         </div>
         </>
     )
