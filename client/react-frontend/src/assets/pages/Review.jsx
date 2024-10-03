@@ -32,9 +32,17 @@ function Review() {
         </div>
         
         {/* show button when there are incorrect answer that haven't been reviewed */}
-        {incorrectAnswers.length>0  && 
-        (<button onClick={clearIncorrectAnswers}>I have reviewed all my wrong answers.</button>)
-        }
+        {incorrectAnswers.length > 0 && (
+        <button
+            onClick={(e) => {
+                clearIncorrectAnswers(); // Clear answers
+                e.target.innerText = "Please refresh the page";
+            }}
+        >
+        I have reviewed all my wrong answers.
+    </button>
+)}
+
         <br/>
 
         </>
