@@ -13,13 +13,12 @@ function Review() {
 
     function clearIncorrectAnswers(){
         localStorage.clear()
-        console.log('deleted local storage')
     }
     
     return (
         <>
         <div>
-            <h2>Review Your Incorrect Answers</h2>
+            <h2>Review Your Incorrect Answers Here</h2>
             <ul>
         {incorrectAnswers.map((item, index) => (
             <li key={index}>
@@ -36,8 +35,7 @@ function Review() {
         {incorrectAnswers.length>0  && 
         (<button onClick={clearIncorrectAnswers}>I have reviewed all my wrong answers.</button>)
         }
-
-        
+        <br/>
 
         </>
     )
