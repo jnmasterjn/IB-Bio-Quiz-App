@@ -10,7 +10,7 @@ function Result(){
 
     return(
     <>
-    <div>
+    <div className="box">
         <title>Result</title>
         
         <h1>Result: </h1>

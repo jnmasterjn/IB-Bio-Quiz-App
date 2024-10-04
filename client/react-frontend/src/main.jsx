@@ -15,6 +15,7 @@ import { AuthProvider } from './assets/authentication/Auth'
 import ProtectedRoute from './assets/authentication/ProtectRoute'
 import NavBar from './assets/component/Nav'
 
+
 const myrouter = createBrowserRouter([
   {
     path:"signin",

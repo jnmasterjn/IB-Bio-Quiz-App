@@ -6,6 +6,7 @@ import '../css/main.css'
 import axios from 'axios';
 
 
+
 function Game(){
 
     const name = localStorage.getItem('name')
@@ -162,12 +163,15 @@ function Game(){
             <h1>Question {CurrentQuestionIndex+1}</h1>
 
             <h2>{currentQuestion.question}</h2>
+
+            <div className="game-button-container">
             {currentQuestion.options.map((option, index) => (
-                <button key={index} 
+                <button key={index} className="game-button"
                         onClick={() => HandleUserAnswer(option)}>
                     {option}
                 </button>
             ))}
+            </div>
             
             <p style={{color: MessageColor}}>{AnswerMessage}</p>
 

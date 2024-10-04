@@ -7,3 +7,38 @@
     background-color: rgb(247, 217, 222);
     padding: 50px;
 }
+
+.game-button{
+    width: 800px;
+    height: 50px;
+    border-radius: 6px;
+}
+
+.game-button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    border-radius: 10px;
+    padding: 30px 20px;
+    background-color: rgb(211, 211, 211); /* Light pink background */
+    color: black;
+    border: none;
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 13px;
+    width: 150px;
+    height: 50px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: rgb(237, 187, 192); /* Slightly darker pink on hover */
+}
+
+button:active {
+    background-color: rgb(227, 167, 172); /*darker pink on click */
+    transform: scale(0.95); /* shrink button when clicked */
+}

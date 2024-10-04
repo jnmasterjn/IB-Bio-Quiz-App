@@ -1,9 +1,10 @@
 import {Link} from "react-router-dom"
 
+
 function Rule(){
 
     const name = localStorage.getItem('name')
-
+    
     
 
     return(
