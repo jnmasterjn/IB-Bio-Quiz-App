@@ -17,7 +17,7 @@ function Review() {
     
     return (
         <>
-        <div>
+        <div className='box'>
             <h2>Review Your Incorrect Answers Here</h2>
             <ul>
         {incorrectAnswers.map((item, index) => (
