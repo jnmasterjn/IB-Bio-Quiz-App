@@ -58,6 +58,14 @@ function Game(){
         },
         [TimeLeft])
 
+    useEffect( () => {
+        if (CurrentQuestionIndex == 10){
+            SubmitScore(Score) //send user score to the backend
+            path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
+        }
+    },[CurrentQuestionIndex]
+    )
+
     if (questions.length === 0){
         return(
             <div>Loading....</div>
@@ -91,42 +99,40 @@ function Game(){
     }
         // Update state and localStorage
         SetIncorrectAnswers(newIncorrectAnswers);
-        localStorage.setItem('incorrectAnswers', JSON.stringify(newIncorrectAnswers));
+        localStorage.setItem('incorrectAnswers', JSON.stringify(newIncorrectAnswers)); //store wrong ans for review.jsx
 
-        if (selectedAnswer === currentQuestion.answer){
-            
-            SetScore(Score+1)
-
-            SetMessageColor('green')
-            SetAnswerMessage("CORRECT")
-            
-            console.log(MessageColor)
-
-        }else{
-
-            SetMessageColor('red')
-            SetAnswerMessage(`WRONG, correct answer: ${currentQuestion.answer}`)
-            
-            console.log(MessageColor)
-        }
-
-        SetHasAnswered(true) //has answered the question, so can't press the buttons again
-        
         setTimeout( () => {
-        if (CurrentQuestionIndex < 9){ //10 questions per round
-            SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
-            SetTimeLeft(5)
-        }else{
-            SubmitScore(Score) //send user score to the backend
-            path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
-        }
+        // if (CurrentQuestionIndex < 9){ //10 questions per round
+        //     SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
+        //     SetTimeLeft(5)
+        // }else{
+        //     SubmitScore(Score) //send user score to the backend
+
+        //     path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
+        // }
+        SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
+        SetTimeLeft(5)
+
         SetHasAnswered(false)
         
         SetMessageColor("") //set color to empty string
         SetAnswerMessage("") //empty the message for next question
 
-
     },1000) //one second before next question
+
+    if (selectedAnswer === currentQuestion.answer){
+            
+        SetScore(Score+1)
+
+        SetMessageColor('green')
+        SetAnswerMessage("CORRECT")
+
+    }else{
+        SetMessageColor('red')
+        SetAnswerMessage(`WRONG, correct answer: ${currentQuestion.answer}`)
+    }
+
+    SetHasAnswered(true) //has answered the question, so can't press the buttons again
     }
 
 
