@@ -1,18 +1,8 @@
-import {Link, useNavigate} from "react-router-dom";
-import { useAuth } from "../authentication/Auth";
+import {Link} from "react-router-dom";
 
 function Home(){
 
     const name = localStorage.getItem('name')
-
-    const {logout} = useAuth()  //access the logout function
-    const path = useNavigate()
-
-    const HandleLogout = () => {
-        logout()
-        path('../Signin')
-    }
-    
 
     return(
         <>
@@ -28,7 +18,6 @@ function Home(){
             <Link to='../rule'><button>Game</button></Link>
             <Link to='../leaderboard'><button>LeaderBoard</button></Link>
 
-            <button onClick={HandleLogout}>Logout</button>
         </div>
         </div>
         </>

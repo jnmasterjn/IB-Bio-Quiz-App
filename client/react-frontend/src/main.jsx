@@ -64,10 +64,9 @@ const myrouter = createBrowserRouter([
 
   {
     path: "review",
-    element:<Review/>
+    element:<ProtectedRoute element ={<Review/>}/>
 
   }
-
 
 ])
 

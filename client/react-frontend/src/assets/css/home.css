@@ -15,12 +15,26 @@
     font-size: 15px;
 }
 
+/* vertically show the option in the game */
 .game-button-container{
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
 }
+
+.result-button-box button{
+    vertical-align: middle;
+    margin: 20px;
+}
+
+.display-logout{
+    position: absolute;
+    right: 0;
+    top: 60px;
+
+}
+
 
 button {
     border-radius: 10px;
@@ -29,8 +43,6 @@ button {
     color: black;
     border: none;
     cursor: pointer; /* Pointer cursor on hover */
-    font-size: 13px;
-    width: 100px;
     height: 40px;
     transition: background-color 0.3s ease; /* Smooth transition */
 }

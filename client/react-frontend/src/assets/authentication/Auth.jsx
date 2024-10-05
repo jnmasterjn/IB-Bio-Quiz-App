@@ -30,6 +30,3 @@ export const AuthProvider = ({children}) => {
         //When you call useAuth(), you get the isLoggedIn, login, and logout values from the context.
     )
 }
-
-
-
