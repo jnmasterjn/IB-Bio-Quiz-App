@@ -19,7 +19,7 @@ function Game(){
     const [CurrentQuestionIndex, SetCurrentQuestionIndex] = useState(0) //keep track of the current question's index, start with [0]
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
-    const [TimeLeft, SetTimeLeft] = useState(5) //5 seconds for each question
+    const [TimeLeft, SetTimeLeft] = useState(30) //5 seconds for each question
     const [AnswerMessage, SetAnswerMessage] = useState("")
     const [MessageColor, SetMessageColor] = useState('')
     const [IncorrectAnswers, SetIncorrectAnswers] = useState([])
@@ -48,7 +48,7 @@ function Game(){
         if (TimeLeft > 0){
             const timer = setTimeout( () => {
                 SetTimeLeft(TimeLeft-1)
-            },2000)
+            },5000)
 
             return ()=> clearTimeout(timer) //clear the timer when components unmounts / timeLeft changes
 
@@ -111,14 +111,14 @@ function Game(){
         //     path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         // }
         SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
-        SetTimeLeft(5)
+        SetTimeLeft(30)
 
         SetHasAnswered(false)
         
         SetMessageColor("") //set color to empty string
         SetAnswerMessage("") //empty the message for next question
 
-    },1000) //one second before next question
+    },2000) //one second before next question
 
     if (selectedAnswer === currentQuestion.answer){
             
