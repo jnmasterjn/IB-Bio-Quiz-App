@@ -32,13 +32,12 @@
     position: absolute;
     right: 0;
     top: 60px;
-
 }
 
 
 button {
     border-radius: 10px;
-    padding: 30px 20px;
+    padding: 30px 30px;
     background-color: rgb(211, 211, 211); /* Light pink background */
     color: black;
     border: none;
