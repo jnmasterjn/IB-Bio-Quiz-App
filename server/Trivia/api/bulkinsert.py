@@ -2,160 +2,177 @@ from .models import Quiz
 from django.db import transaction
 
 quizzes = [
-Quiz(
-        question="What is gene expression?",
-        answer="Gene expression is the process by which genetic information is used to produce RNA and proteins.",
-        optionOne="Gene expression is the process by which genetic information is used to produce RNA and proteins.",
-        optionTwo="Gene expression is the mutation of genes over time.",
-        optionThree="Gene expression is the process by which DNA is replicated during cell division."
-    ),
+    # Gene Mutations
     Quiz(
-        question="How does gene expression affect phenotype?",
-        answer="Gene expression controls the production of proteins, which in turn determine the structure and function of cells, influencing the organism's phenotype.",
-        optionOne="Gene expression controls the production of proteins, which in turn determine the structure and function of cells, influencing the organism's phenotype.",
-        optionTwo="Gene expression causes mutations that change the organism's physical characteristics.",
-        optionThree="Gene expression only affects the genotype and has no impact on phenotype."
+        question="What is a gene mutation?",
+        answer="A structural change to a gene at the molecular level.",
+        optionOne="A structural change to a gene at the molecular level.",
+        optionTwo="A complete removal of a gene from the genome.",
+        optionThree="A functional enhancement of a gene's activity."
     ),
     
-    # Regulation of Transcription
+    # Consequences of Base Substitutions
     Quiz(
-        question="How can transcription be regulated by proteins?",
-        answer="Transcription can be regulated by transcription factors that either activate or repress the binding of RNA polymerase to DNA.",
-        optionOne="Transcription can be regulated by transcription factors that either activate or repress the binding of RNA polymerase to DNA.",
-        optionTwo="Transcription is only regulated by mutations in the gene sequence.",
-        optionThree="Transcription is regulated through the translation of proteins."
-    ),
-    Quiz(
-        question="What is the role of enhancers in transcription?",
-        answer="Enhancers are regions of DNA that can bind activator proteins to facilitate RNA polymerase binding to the promoter, enhancing gene transcription.",
-        optionOne="Enhancers are regions of DNA that can bind activator proteins to facilitate RNA polymerase binding to the promoter, enhancing gene transcription.",
-        optionTwo="Enhancers prevent transcription by blocking RNA polymerase from binding to DNA.",
-        optionThree="Enhancers are non-coding regions that only degrade mRNA."
+        question="What is the difference between a synonymous and a non-synonymous substitution?",
+        answer="A synonymous substitution does not change the amino acid sequence, while a non-synonymous substitution alters the amino acid sequence.",
+        optionOne="A synonymous substitution does not change the amino acid sequence, while a non-synonymous substitution alters the amino acid sequence.",
+        optionTwo="A synonymous substitution always leads to protein malfunction, while a non-synonymous substitution has no effect on proteins.",
+        optionThree="A synonymous substitution changes the genetic code, while a non-synonymous substitution removes nucleotides from the sequence."
     ),
     
-    # Regulation of Translation
+    # Consequences of Insertions and Deletions
     Quiz(
-        question="How can the persistence of mRNA regulate gene expression?",
-        answer="The longer an mRNA molecule persists, the more it can be translated into protein, thus increasing gene expression.",
-        optionOne="The longer an mRNA molecule persists, the more it can be translated into protein, thus increasing gene expression.",
-        optionTwo="The persistence of mRNA has no effect on gene expression.",
-        optionThree="The persistence of mRNA only determines whether or not the gene is transcribed."
-    ),
-    Quiz(
-        question="Which modifications to mRNA increase its stability?",
-        answer="The addition of a guanine cap at the 5' end and a poly-A tail at the 3' end increases the stability of mRNA.",
-        optionOne="The addition of a guanine cap at the 5' end and a poly-A tail at the 3' end increases the stability of mRNA.",
-        optionTwo="Only the addition of a poly-A tail increases the stability of mRNA.",
-        optionThree="mRNA is only stabilised by protein binding, not by chemical modifications."
-    ),
-        # Epigenesis
-    Quiz(
-        question="What is epigenesis?",
-        answer="Epigenesis is the process by which cells and organisms develop from an undifferentiated zygote through interactions between DNA and environmental factors.",
-        optionOne="Epigenesis is the process by which cells and organisms develop from an undifferentiated zygote through interactions between DNA and environmental factors.",
-        optionTwo="Epigenesis is the permanent alteration of the DNA sequence in response to environmental changes.",
-        optionThree="Epigenesis is the random mutation of genes in response to environmental stress."
-    ),
-    
-    # Genome, Transcriptome, and Proteome
-    Quiz(
-        question="How are the genome, transcriptome, and proteome different in individual cells?",
-        answer="The genome is the complete set of DNA, the transcriptome is the set of RNA transcripts, and the proteome is the entire set of proteins expressed in a cell.",
-        optionOne="The genome is the complete set of DNA, the transcriptome is the set of RNA transcripts, and the proteome is the entire set of proteins expressed in a cell.",
-        optionTwo="The transcriptome is the complete set of DNA, the proteome is the set of RNA transcripts, and the genome is the entire set of proteins expressed in a cell.",
-        optionThree="The genome is the set of proteins, the transcriptome is the complete set of DNA, and the proteome is the set of RNA transcripts in a cell."
-    ),
-    
-    # Methylation and Gene Expression
-    Quiz(
-        question="How does DNA methylation affect gene expression?",
-        answer="Methylation of cytosine in promoter regions represses transcription by preventing transcription factors from binding, thereby decreasing gene expression.",
-        optionOne="Methylation of cytosine in promoter regions represses transcription by preventing transcription factors from binding, thereby decreasing gene expression.",
-        optionTwo="Methylation of cytosine activates transcription by facilitating the binding of transcription factors.",
-        optionThree="Methylation has no effect on gene expression and only alters the DNA sequence."
-    ),
-    
-    # Histone Acetylation and Methylation
-    Quiz(
-        question="What is the effect of histone acetylation on gene expression?",
-        answer="Histone acetylation reduces the positive charge on histone tails, loosening DNA-histone interactions and increasing gene expression.",
-        optionOne="Histone acetylation reduces the positive charge on histone tails, loosening DNA-histone interactions and increasing gene expression.",
-        optionTwo="Histone acetylation increases the positive charge on histone tails, tightening DNA-histone interactions and decreasing gene expression.",
-        optionThree="Histone acetylation has no effect on gene expression."
-    ),
-    Quiz(
-        question="How does histone methylation affect gene expression?",
-        answer="Histone methylation can either activate or repress gene expression, depending on the amino acid methylated and the number of methyl groups added.",
-        optionOne="Histone methylation can either activate or repress gene expression, depending on the amino acid methylated and the number of methyl groups added.",
-        optionTwo="Histone methylation always represses gene expression by preventing the binding of RNA polymerase.",
-        optionThree="Histone methylation always activates gene expression by enhancing RNA polymerase activity."
-    ),
-    
-    # Epigenetic Inheritance
-    Quiz(
-        question="What is epigenetic inheritance?",
-        answer="Epigenetic inheritance refers to the transmission of non-genetic information, such as DNA methylation or histone modifications, that can influence gene expression in offspring.",
-        optionOne="Epigenetic inheritance refers to the transmission of non-genetic information, such as DNA methylation or histone modifications, that can influence gene expression in offspring.",
-        optionTwo="Epigenetic inheritance refers to the inheritance of genetic mutations that occur during development.",
-        optionThree="Epigenetic inheritance only occurs during environmental adaptation in somatic cells."
-    ),
-    Quiz(
-        question="How does air pollution affect gene expression?",
-        answer="Air pollution affects DNA methylation patterns, leading to increased inflammation, oxidative stress, and immune response disruption.",
-        optionOne="Air pollution affects DNA methylation patterns, leading to increased inflammation, oxidative stress, and immune response disruption.",
-        optionTwo="Air pollution causes genetic mutations directly in the DNA sequence.",
-        optionThree="Air pollution has no impact on gene expression."
-    ),
-    
-    # Removal of epigenetic tags
-    Quiz(
-        question="What happens to most epigenetic tags during fertilization?",
-        answer="Most epigenetic tags are removed, allowing for the reset of gene expression and the development of new epigenetic modifications.",
-        optionOne="Most epigenetic tags are removed, allowing for the reset of gene expression and the development of new epigenetic modifications.",
-        optionTwo="All epigenetic tags are removed entirely from the genome.",
-        optionThree="No epigenetic tags are removed, and all are passed on to offspring."
-    ),
-    
-    # Monozygotic twins studies
-    Quiz(
-        question="Why are monozygotic twins useful for studying gene expression?",
-        answer="Monozygotic twins have identical genomes, so any differences in their traits are due to environmental or epigenetic factors.",
-        optionOne="Monozygotic twins have identical genomes, so any differences in their traits are due to environmental or epigenetic factors.",
-        optionTwo="Monozygotic twins have identical environments, so any differences in traits are genetic.",
-        optionThree="Monozygotic twins have completely different genomes, making them ideal for studying genetic disorders."
-    ),
-    
-    # External factors impacting gene expression
-    Quiz(
-        question="How does the presence of lactose impact the expression of the lac operon in bacteria?",
-        answer="When lactose is present, it binds to the repressor, allowing RNA polymerase to bind to the promoter and express the genes in the lac operon.",
-        optionOne="When lactose is present, it binds to the repressor, allowing RNA polymerase to bind to the promoter and express the genes in the lac operon.",
-        optionTwo="When lactose is present, it prevents RNA polymerase from binding to the promoter, inhibiting gene expression.",
-        optionThree="Lactose presence has no effect on gene expression in bacteria."
+        question="What is a frameshift mutation?",
+        answer="A mutation caused by insertions or deletions that shift the reading frame of codons, altering the resulting amino acid sequence.",
+        optionOne="A mutation caused by insertions or deletions that shift the reading frame of codons, altering the resulting amino acid sequence.",
+        optionTwo="A mutation caused by the substitution of a single base without affecting the reading frame.",
+        optionThree="A mutation that results from the replacement of a codon with a stop codon."
     ),
     
     Quiz(
-        question="What effect does oestradiol have on gene expression?",
-        answer="Oestradiol binds to intracellular receptors, forming a complex that can enter the nucleus and promote the transcription of target genes.",
-        optionOne="Oestradiol binds to intracellular receptors, forming a complex that can enter the nucleus and promote the transcription of target genes.",
-        optionTwo="Oestradiol binds directly to DNA to inhibit transcription of certain genes.",
-        optionThree="Oestradiol has no impact on gene expression in cells."
+        question="What is the potential consequence of an insertion mutation?",
+        answer="It can cause a frameshift mutation, leading to significant changes in the protein's amino acid sequence and possibly disrupting its function.",
+        optionOne="It can cause a frameshift mutation, leading to significant changes in the protein's amino acid sequence and possibly disrupting its function.",
+        optionTwo="It replaces one amino acid with another but does not impact the protein's function.",
+        optionThree="It deletes part of the gene sequence, resulting in no protein being produced."
     ),
     
     Quiz(
-        question="What happens to gene expression when the tryptophan operon is exposed to high levels of tryptophan?",
-        answer="High levels of tryptophan bind to the repressor, causing it to inhibit the operon by preventing RNA polymerase from transcribing the genes.",
-        optionOne="High levels of tryptophan bind to the repressor, causing it to inhibit the operon by preventing RNA polymerase from transcribing the genes.",
-        optionTwo="High levels of tryptophan activate RNA polymerase, increasing gene transcription.",
-        optionThree="Tryptophan presence does not affect gene expression in the operon."
+        question="What effect can a deletion mutation have on a DNA sequence?",
+        answer="It can cause a frameshift, resulting in a completely altered amino acid sequence and potentially a nonfunctional protein.",
+        optionOne="It can cause a frameshift, resulting in a completely altered amino acid sequence and potentially a nonfunctional protein.",
+        optionTwo="It changes the structure of the protein but does not affect its function.",
+        optionThree="It inserts a new gene in place of the deleted sequence."
     ),
     
-    # Methylation and gene expression
+    # Base Substitutions and Their Effects
     Quiz(
-        question="How does methylation of cytosine in DNA affect gene expression?",
-        answer="Methylation of cytosine in promoter regions prevents transcription factors from binding, reducing gene expression.",
-        optionOne="Methylation of cytosine in promoter regions prevents transcription factors from binding, reducing gene expression.",
-        optionTwo="Methylation of cytosine in promoter regions enhances the binding of transcription factors, increasing gene expression.",
-        optionThree="Methylation of cytosine has no effect on gene expression."
+        question="What is a single-nucleotide polymorphism (SNP)?",
+        answer="A base substitution mutation where one nucleotide is replaced by another.",
+        optionOne="A base substitution mutation where one nucleotide is replaced by another.",
+        optionTwo="An insertion of a single nucleotide in a gene.",
+        optionThree="A deletion of multiple nucleotides in a gene."
+    ),
+    
+    Quiz(
+        question="How can non-synonymous base substitutions affect protein function?",
+        answer="They alter the amino acid sequence of the protein, which may lead to protein malfunction.",
+        optionOne="They alter the amino acid sequence of the protein, which may lead to protein malfunction.",
+        optionTwo="They do not affect the amino acid sequence of the protein.",
+        optionThree="They cause the protein to become more efficient in its function."
+    ),
+       Quiz(
+        question="What are the two primary causes of gene mutations?",
+        answer="Errors in DNA replication/repair and mutagens such as chemicals or radiation.",
+        optionOne="Errors in DNA replication/repair and mutagens such as chemicals or radiation.",
+        optionTwo="Natural aging and diet.",
+        optionThree="Environmental changes and protein deficiency."
+    ),
+    
+    # Randomness in Mutation
+    Quiz(
+        question="What makes mutations random?",
+        answer="Mutations can occur anywhere in the base sequences of a genome without deliberate selection.",
+        optionOne="Mutations can occur anywhere in the base sequences of a genome without deliberate selection.",
+        optionTwo="Mutations are always caused by radiation exposure.",
+        optionThree="Mutations can only occur in certain gene sequences."
+    ),
+    
+    # Consequences of Mutation in Germ and Somatic Cells
+    Quiz(
+        question="What is the main difference between mutations in somatic cells and germ cells?",
+        answer="Mutations in somatic cells cannot be passed to offspring, while mutations in germ cells can be inherited.",
+        optionOne="Mutations in somatic cells cannot be passed to offspring, while mutations in germ cells can be inherited.",
+        optionTwo="Mutations in somatic cells always result in cancer, while mutations in germ cells have no effect.",
+        optionThree="Mutations in somatic cells are harmless, while mutations in germ cells always cause genetic disorders."
+    ),
+    
+    # Mutation as a Source of Genetic Variation
+    Quiz(
+        question="Why is gene mutation considered the original source of genetic variation?",
+        answer="Gene mutations introduce new alleles into a population, contributing to diversity.",
+        optionOne="Gene mutations introduce new alleles into a population, contributing to diversity.",
+        optionTwo="Gene mutations always lead to harmful traits that reduce variation.",
+        optionThree="Gene mutations only affect non-coding regions and do not contribute to variation."
+    ),
+    
+    # Effects of Different Mutations
+    Quiz(
+        question="Which type of mutation results in the most significant changes to the protein structure?",
+        answer="Frameshift mutations caused by insertions or deletions.",
+        optionOne="Frameshift mutations caused by insertions or deletions.",
+        optionTwo="Silent mutations caused by base substitutions.",
+        optionThree="Synonymous mutations with no effect on protein structure."
+    ),
+    
+    # Example of a Harmful Mutation
+    Quiz(
+        question="What is a potential consequence of a harmful mutation in a somatic cell?",
+        answer="It can lead to diseases such as cancer by disrupting normal cell growth and division.",
+        optionOne="It can lead to diseases such as cancer by disrupting normal cell growth and division.",
+        optionTwo="It improves the fitness of the organism.",
+        optionThree="It has no effect on the organism."
+    ),
+    
+    # Beneficial Mutations
+    Quiz(
+        question="How can beneficial mutations affect an organism's fitness?",
+        answer="Beneficial mutations can improve an organism's ability to adapt to its environment and increase reproductive success.",
+        optionOne="Beneficial mutations can improve an organism's ability to adapt to its environment and increase reproductive success.",
+        optionTwo="Beneficial mutations always reduce the organism's chances of survival.",
+        optionThree="Beneficial mutations have no effect on an organism's fitness."
+    ),
+        # Gene Knockout
+    Quiz(
+        question="What is the purpose of gene knockout studies?",
+        answer="To investigate the function of a gene by making it inoperative.",
+        optionOne="To investigate the function of a gene by making it inoperative.",
+        optionTwo="To add new genes to organisms.",
+        optionThree="To replicate the function of genes in different species."
+    ),
+    
+    # CRISPR and Cas9
+    Quiz(
+        question="What is the role of Cas9 in the CRISPR-Cas9 system?",
+        answer="Cas9 is an enzyme that cuts DNA at specific target sites guided by RNA.",
+        optionOne="Cas9 is an enzyme that cuts DNA at specific target sites guided by RNA.",
+        optionTwo="Cas9 repairs damaged DNA sequences.",
+        optionThree="Cas9 helps transcribe genes into mRNA."
+    ),
+    
+    # CRISPR and Gene Editing
+    Quiz(
+        question="How is the CRISPR system adapted by scientists for gene editing?",
+        answer="Scientists design single guide RNAs (sgRNA) to target specific genes for modification or deletion.",
+        optionOne="Scientists design single guide RNAs (sgRNA) to target specific genes for modification or deletion.",
+        optionTwo="Scientists use CRISPR to randomly mutate genes.",
+        optionThree="CRISPR is used to repair DNA in all organisms without RNA involvement."
+    ),
+    
+    # Ethical Considerations in CRISPR
+    Quiz(
+        question="What are some ethical concerns regarding the use of CRISPR technology?",
+        answer="Concerns include off-target effects and potential use for genetic enhancement or selection.",
+        optionOne="Concerns include off-target effects and potential use for genetic enhancement or selection.",
+        optionTwo="It can only be used in microorganisms, limiting its scope.",
+        optionThree="CRISPR may cause random mutations in all organisms without regulation."
+    ),
+    
+    # Conserved Sequences
+    Quiz(
+        question="What is the significance of highly conserved sequences in genes?",
+        answer="Highly conserved sequences are critical for essential cellular processes and remain unchanged due to functional constraints.",
+        optionOne="Highly conserved sequences are critical for essential cellular processes and remain unchanged due to functional constraints.",
+        optionTwo="Highly conserved sequences allow for rapid mutations to adapt to environmental changes.",
+        optionThree="Highly conserved sequences have no role in evolution."
+    ),
+    
+    # CRISPR Applications
+    Quiz(
+        question="How can CRISPR-Cas9 technology be applied in agriculture?",
+        answer="CRISPR can introduce genetic modifications to enhance crop yield, nutritional content, and disease resistance.",
+        optionOne="CRISPR can introduce genetic modifications to enhance crop yield, nutritional content, and disease resistance.",
+        optionTwo="CRISPR can be used to delete harmful genes in crops.",
+        optionThree="CRISPR only works in animal models and cannot be applied to plants."
     )
 ]
