@@ -118,7 +118,7 @@ function Game(){
         SetMessageColor("") //set color to empty string
         SetAnswerMessage("") //empty the message for next question
 
-    },2000) //one second before next question
+    },2000) //two second before next question
 
     if (selectedAnswer === currentQuestion.answer){
             
