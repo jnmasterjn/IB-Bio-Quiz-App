@@ -2,177 +2,162 @@ from .models import Quiz
 from django.db import transaction
 
 quizzes = [
-    # Gene Mutations
     Quiz(
-        question="What is a gene mutation?",
-        answer="A structural change to a gene at the molecular level.",
-        optionOne="A structural change to a gene at the molecular level.",
-        optionTwo="A complete removal of a gene from the genome.",
-        optionThree="A functional enhancement of a gene's activity."
+        question="What leads to allopatric speciation?",
+        answer="Geographical isolation, causing populations to diverge genetically and eventually become reproductively isolated.",
+        optionOne="Geographical isolation, causing populations to diverge genetically and eventually become reproductively isolated.",
+        optionTwo="Behavioural isolation, preventing individuals from recognising each other’s mating rituals.",
+        optionThree="Differences in timing of reproductive cycles within the same area."
     ),
     
-    # Consequences of Base Substitutions
+    # Sympatric Speciation
     Quiz(
-        question="What is the difference between a synonymous and a non-synonymous substitution?",
-        answer="A synonymous substitution does not change the amino acid sequence, while a non-synonymous substitution alters the amino acid sequence.",
-        optionOne="A synonymous substitution does not change the amino acid sequence, while a non-synonymous substitution alters the amino acid sequence.",
-        optionTwo="A synonymous substitution always leads to protein malfunction, while a non-synonymous substitution has no effect on proteins.",
-        optionThree="A synonymous substitution changes the genetic code, while a non-synonymous substitution removes nucleotides from the sequence."
+        question="What is an example of sympatric speciation in progress?",
+        answer="Apple maggot flies, where flies are diverging based on host plant preferences within the same geographical area.",
+        optionOne="Apple maggot flies, where flies are diverging based on host plant preferences within the same geographical area.",
+        optionTwo="Galapagos finches, which diverged due to isolation on different islands.",
+        optionThree="Kaibab squirrels, which were isolated by the formation of the Grand Canyon."
     ),
     
-    # Consequences of Insertions and Deletions
+    # Mechanisms of Reproductive Isolation
     Quiz(
-        question="What is a frameshift mutation?",
-        answer="A mutation caused by insertions or deletions that shift the reading frame of codons, altering the resulting amino acid sequence.",
-        optionOne="A mutation caused by insertions or deletions that shift the reading frame of codons, altering the resulting amino acid sequence.",
-        optionTwo="A mutation caused by the substitution of a single base without affecting the reading frame.",
-        optionThree="A mutation that results from the replacement of a codon with a stop codon."
+        question="Which type of reproductive isolation occurs due to differences in mating rituals or courtship behaviors?",
+        answer="Behavioural isolation.",
+        optionOne="Behavioural isolation.",
+        optionTwo="Geographical isolation.",
+        optionThree="Temporal isolation."
     ),
     
+    # Geographical Isolation Example
     Quiz(
-        question="What is the potential consequence of an insertion mutation?",
-        answer="It can cause a frameshift mutation, leading to significant changes in the protein's amino acid sequence and possibly disrupting its function.",
-        optionOne="It can cause a frameshift mutation, leading to significant changes in the protein's amino acid sequence and possibly disrupting its function.",
-        optionTwo="It replaces one amino acid with another but does not impact the protein's function.",
-        optionThree="It deletes part of the gene sequence, resulting in no protein being produced."
+        question="Which species is an example of allopatric speciation due to a geographical barrier?",
+        answer="Kaibab squirrels and Abert squirrels, which were separated by the Grand Canyon.",
+        optionOne="Kaibab squirrels and Abert squirrels, which were separated by the Grand Canyon.",
+        optionTwo="Apple maggot flies, which diverged based on their choice of host plant.",
+        optionThree="Fireflies, which evolved different light patterns."
     ),
     
+    # Temporal Isolation
     Quiz(
-        question="What effect can a deletion mutation have on a DNA sequence?",
-        answer="It can cause a frameshift, resulting in a completely altered amino acid sequence and potentially a nonfunctional protein.",
-        optionOne="It can cause a frameshift, resulting in a completely altered amino acid sequence and potentially a nonfunctional protein.",
-        optionTwo="It changes the structure of the protein but does not affect its function.",
-        optionThree="It inserts a new gene in place of the deleted sequence."
+        question="What is an example of temporal isolation leading to reproductive isolation?",
+        answer="Two species of cicadas with different life cycles, maturing at different times.",
+        optionOne="Two species of cicadas with different life cycles, maturing at different times.",
+        optionTwo="Male fireflies of different species using different light patterns.",
+        optionThree="Kaibab squirrels separated by the Grand Canyon."
     ),
     
-    # Base Substitutions and Their Effects
+    # Sympatric Speciation Mechanism
     Quiz(
-        question="What is a single-nucleotide polymorphism (SNP)?",
-        answer="A base substitution mutation where one nucleotide is replaced by another.",
-        optionOne="A base substitution mutation where one nucleotide is replaced by another.",
-        optionTwo="An insertion of a single nucleotide in a gene.",
-        optionThree="A deletion of multiple nucleotides in a gene."
+        question="What is a key factor in sympatric speciation?",
+        answer="Isolation mechanisms such as behavioural or temporal isolation occurring within the same geographical area.",
+        optionOne="Isolation mechanisms such as behavioural or temporal isolation occurring within the same geographical area.",
+        optionTwo="Physical barriers that prevent gene flow between populations.",
+        optionThree="The introduction of a geographical barrier, like a mountain range."
+    ),
+    # Adaptive Radiation
+    Quiz(
+        question="What is adaptive radiation?",
+        answer="The rapid evolution of an ancestral species into multiple species that exploit different ecological niches.",
+        optionOne="The rapid evolution of an ancestral species into multiple species that exploit different ecological niches.",
+        optionTwo="The gradual evolution of species without divergence into separate ecological niches.",
+        optionThree="The extinction of species due to competition for resources."
     ),
     
+    # Example of Adaptive Radiation
     Quiz(
-        question="How can non-synonymous base substitutions affect protein function?",
-        answer="They alter the amino acid sequence of the protein, which may lead to protein malfunction.",
-        optionOne="They alter the amino acid sequence of the protein, which may lead to protein malfunction.",
-        optionTwo="They do not affect the amino acid sequence of the protein.",
-        optionThree="They cause the protein to become more efficient in its function."
-    ),
-       Quiz(
-        question="What are the two primary causes of gene mutations?",
-        answer="Errors in DNA replication/repair and mutagens such as chemicals or radiation.",
-        optionOne="Errors in DNA replication/repair and mutagens such as chemicals or radiation.",
-        optionTwo="Natural aging and diet.",
-        optionThree="Environmental changes and protein deficiency."
+        question="Which of the following is an example of adaptive radiation?",
+        answer="Darwin’s finches on the Galapagos Islands.",
+        optionOne="Darwin’s finches on the Galapagos Islands.",
+        optionTwo="The hybridisation of a mule from a horse and a donkey.",
+        optionThree="The crossing of wheat and rye plants to form hybrid offspring."
     ),
     
-    # Randomness in Mutation
+    # Importance of Adaptive Radiation
     Quiz(
-        question="What makes mutations random?",
-        answer="Mutations can occur anywhere in the base sequences of a genome without deliberate selection.",
-        optionOne="Mutations can occur anywhere in the base sequences of a genome without deliberate selection.",
-        optionTwo="Mutations are always caused by radiation exposure.",
-        optionThree="Mutations can only occur in certain gene sequences."
+        question="How does adaptive radiation contribute to biodiversity?",
+        answer="It allows closely related species to exploit different ecological niches, reducing competition and increasing species diversity.",
+        optionOne="It allows closely related species to exploit different ecological niches, reducing competition and increasing species diversity.",
+        optionTwo="It forces species to compete for the same resources, leading to the survival of only the fittest species.",
+        optionThree="It results in the extinction of species that fail to adapt to the same ecological niche."
     ),
     
-    # Consequences of Mutation in Germ and Somatic Cells
+    # Barriers to Hybridisation
     Quiz(
-        question="What is the main difference between mutations in somatic cells and germ cells?",
-        answer="Mutations in somatic cells cannot be passed to offspring, while mutations in germ cells can be inherited.",
-        optionOne="Mutations in somatic cells cannot be passed to offspring, while mutations in germ cells can be inherited.",
-        optionTwo="Mutations in somatic cells always result in cancer, while mutations in germ cells have no effect.",
-        optionThree="Mutations in somatic cells are harmless, while mutations in germ cells always cause genetic disorders."
+        question="What are prezygotic barriers in hybridisation?",
+        answer="Mechanisms that prevent fertilisation, such as behavioural isolation or differences in courtship behaviour.",
+        optionOne="Mechanisms that prevent fertilisation, such as behavioural isolation or differences in courtship behaviour.",
+        optionTwo="Mechanisms that occur after fertilisation, such as hybrid sterility.",
+        optionThree="Mechanisms that increase the fertility of hybrids."
     ),
     
-    # Mutation as a Source of Genetic Variation
+    # Sterility of Interspecific Hybrids
     Quiz(
-        question="Why is gene mutation considered the original source of genetic variation?",
-        answer="Gene mutations introduce new alleles into a population, contributing to diversity.",
-        optionOne="Gene mutations introduce new alleles into a population, contributing to diversity.",
-        optionTwo="Gene mutations always lead to harmful traits that reduce variation.",
-        optionThree="Gene mutations only affect non-coding regions and do not contribute to variation."
+        question="Why are mules, the offspring of a donkey and a horse, sterile?",
+        answer="Mules have an uneven number of chromosomes (63), preventing proper homologous chromosome pairing during meiosis.",
+        optionOne="Mules have an uneven number of chromosomes (63), preventing proper homologous chromosome pairing during meiosis.",
+        optionTwo="Mules are genetically incompatible with both parent species due to a lack of shared genes.",
+        optionThree="Mules are produced by postzygotic barriers that prevent the formation of reproductive organs."
     ),
     
-    # Effects of Different Mutations
+    # Example of Postzygotic Barrier
     Quiz(
-        question="Which type of mutation results in the most significant changes to the protein structure?",
-        answer="Frameshift mutations caused by insertions or deletions.",
-        optionOne="Frameshift mutations caused by insertions or deletions.",
-        optionTwo="Silent mutations caused by base substitutions.",
-        optionThree="Synonymous mutations with no effect on protein structure."
+        question="Which of the following is a postzygotic barrier to hybridisation?",
+        answer="Reduced fertility of the hybrid, such as in the case of a mule.",
+        optionOne="Reduced fertility of the hybrid, such as in the case of a mule.",
+        optionTwo="Differences in courtship behavior that prevent mating between species.",
+        optionThree="Differences in the timing of reproductive cycles that prevent species from mating."
+    ),
+    # Polyploidy Definition
+    Quiz(
+        question="What is polyploidy?",
+        answer="A condition where a cell or organism acquires one or more additional sets of chromosomes.",
+        optionOne="A condition where a cell or organism acquires one or more additional sets of chromosomes.",
+        optionTwo="A condition where a cell loses chromosomes during mitosis.",
+        optionThree="A mutation in the DNA sequence of a gene, causing genetic variation."
     ),
     
-    # Example of a Harmful Mutation
+    # Example of Polyploidy
     Quiz(
-        question="What is a potential consequence of a harmful mutation in a somatic cell?",
-        answer="It can lead to diseases such as cancer by disrupting normal cell growth and division.",
-        optionOne="It can lead to diseases such as cancer by disrupting normal cell growth and division.",
-        optionTwo="It improves the fitness of the organism.",
-        optionThree="It has no effect on the organism."
+        question="Which of the following is an example of a polyploid organism?",
+        answer="A plant with 42 chromosomes (n=7) is hexaploid (6n).",
+        optionOne="A plant with 42 chromosomes (n=7) is hexaploid (6n).",
+        optionTwo="A plant with 14 chromosomes (n=7) is diploid (2n).",
+        optionThree="A plant with 21 chromosomes (n=7) is triploid (3n)."
     ),
     
-    # Beneficial Mutations
+    # Even vs Odd Polyploids
     Quiz(
-        question="How can beneficial mutations affect an organism's fitness?",
-        answer="Beneficial mutations can improve an organism's ability to adapt to its environment and increase reproductive success.",
-        optionOne="Beneficial mutations can improve an organism's ability to adapt to its environment and increase reproductive success.",
-        optionTwo="Beneficial mutations always reduce the organism's chances of survival.",
-        optionThree="Beneficial mutations have no effect on an organism's fitness."
-    ),
-        # Gene Knockout
-    Quiz(
-        question="What is the purpose of gene knockout studies?",
-        answer="To investigate the function of a gene by making it inoperative.",
-        optionOne="To investigate the function of a gene by making it inoperative.",
-        optionTwo="To add new genes to organisms.",
-        optionThree="To replicate the function of genes in different species."
+        question="Why are polyploids with odd numbers of chromosomes typically sterile?",
+        answer="Odd chromosome numbers cause problems during meiosis as chromosomes cannot pair up correctly.",
+        optionOne="Odd chromosome numbers cause problems during meiosis as chromosomes cannot pair up correctly.",
+        optionTwo="Odd chromosome numbers lead to excessive DNA replication, causing sterility.",
+        optionThree="Odd chromosome numbers prevent fertilisation by other species."
     ),
     
-    # CRISPR and Cas9
+    # Allopolyploidy Definition
     Quiz(
-        question="What is the role of Cas9 in the CRISPR-Cas9 system?",
-        answer="Cas9 is an enzyme that cuts DNA at specific target sites guided by RNA.",
-        optionOne="Cas9 is an enzyme that cuts DNA at specific target sites guided by RNA.",
-        optionTwo="Cas9 repairs damaged DNA sequences.",
-        optionThree="Cas9 helps transcribe genes into mRNA."
+        question="What is allopolyploidy?",
+        answer="A form of polyploidy where multiple chromosome sets come from different parental species.",
+        optionOne="A form of polyploidy where multiple chromosome sets come from different parental species.",
+        optionTwo="A mutation that occurs due to chromosome deletions during meiosis.",
+        optionThree="A condition where chromosome numbers are halved during reproduction."
     ),
     
-    # CRISPR and Gene Editing
+    # Allopolyploidy Example
     Quiz(
-        question="How is the CRISPR system adapted by scientists for gene editing?",
-        answer="Scientists design single guide RNAs (sgRNA) to target specific genes for modification or deletion.",
-        optionOne="Scientists design single guide RNAs (sgRNA) to target specific genes for modification or deletion.",
-        optionTwo="Scientists use CRISPR to randomly mutate genes.",
-        optionThree="CRISPR is used to repair DNA in all organisms without RNA involvement."
+        question="Which of the following crops is an example of an allopolyploid?",
+        answer="Tobacco and wheat are examples of allopolyploid crops.",
+        optionOne="Tobacco and wheat are examples of allopolyploid crops.",
+        optionTwo="Bananas and strawberries are examples of allopolyploid crops.",
+        optionThree="Rice and corn are examples of allopolyploid crops."
     ),
     
-    # Ethical Considerations in CRISPR
+    # Role of Polyploidy in Speciation
     Quiz(
-        question="What are some ethical concerns regarding the use of CRISPR technology?",
-        answer="Concerns include off-target effects and potential use for genetic enhancement or selection.",
-        optionOne="Concerns include off-target effects and potential use for genetic enhancement or selection.",
-        optionTwo="It can only be used in microorganisms, limiting its scope.",
-        optionThree="CRISPR may cause random mutations in all organisms without regulation."
-    ),
-    
-    # Conserved Sequences
-    Quiz(
-        question="What is the significance of highly conserved sequences in genes?",
-        answer="Highly conserved sequences are critical for essential cellular processes and remain unchanged due to functional constraints.",
-        optionOne="Highly conserved sequences are critical for essential cellular processes and remain unchanged due to functional constraints.",
-        optionTwo="Highly conserved sequences allow for rapid mutations to adapt to environmental changes.",
-        optionThree="Highly conserved sequences have no role in evolution."
-    ),
-    
-    # CRISPR Applications
-    Quiz(
-        question="How can CRISPR-Cas9 technology be applied in agriculture?",
-        answer="CRISPR can introduce genetic modifications to enhance crop yield, nutritional content, and disease resistance.",
-        optionOne="CRISPR can introduce genetic modifications to enhance crop yield, nutritional content, and disease resistance.",
-        optionTwo="CRISPR can be used to delete harmful genes in crops.",
-        optionThree="CRISPR only works in animal models and cannot be applied to plants."
+        question="How does polyploidy contribute to speciation in plants?",
+        answer="Polyploidy can result in new species that cannot interbreed with the original parent species, leading to reproductive isolation.",
+        optionOne="Polyploidy can result in new species that cannot interbreed with the original parent species, leading to reproductive isolation.",
+        optionTwo="Polyploidy leads to identical offspring without any genetic variation.",
+        optionThree="Polyploidy causes mutations that make the offspring more susceptible to diseases."
     )
 ]
