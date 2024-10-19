@@ -28,6 +28,7 @@ function Review() {
                 <>
                     {incorrectAnswers.map((item, index) => (
                         <li key={index}>
+                            <br/>
                             <p><strong>Question:</strong> {item.question}</p>
                             <p><strong>Your Answer:</strong> {item.userAnswer}</p>
                             <p><strong>Correct Answer:</strong> {item.correctAnswer}</p>

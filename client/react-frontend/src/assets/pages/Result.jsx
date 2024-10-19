@@ -21,6 +21,7 @@ function Result(){
         <div className="result-button-box">
         <Link to='../rule'><button>Play Another Round</button></Link>
         <Link to='../home'><button>Home Page</button></Link>
+        <Link to='../Review'><button>Review</button></Link>
         </div>
 
     </div>
