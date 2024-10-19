@@ -171,6 +171,7 @@ function Game(){
             <h2>{currentQuestion.question}</h2>
 
             <div className="game-button-container">
+
             {currentQuestion.options.map((option, index) => (
                 <button key={index} className="game-button"
                         onClick={() => HandleUserAnswer(option)}>

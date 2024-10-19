@@ -12,7 +12,8 @@ function Review() {
     }, []);
 
     function clearIncorrectAnswers(){
-        localStorage.clear()
+        localStorage.removeItem('incorrectAnswers');
+        setIncorrectAnswers([])
     }
     
     return (
@@ -20,14 +21,21 @@ function Review() {
         <div className='box'>
             <h2>Review Your Incorrect Answers Here</h2>
             <ul>
-        {incorrectAnswers.map((item, index) => (
-            <li key={index}>
-                <p><strong>Question:</strong> {item.question}</p>
-                <p><strong>Your Answer:</strong> {item.userAnswer}</p>
-                <p><strong>Correct Answer:</strong> {item.correctAnswer}</p>
-                <br></br>
-            </li>
-        ))}
+
+        {/* ternary statement to check if there are wrong answers */}
+        {incorrectAnswers.length > 0 ? 
+            <>
+                {incorrectAnswers.map((item, index) => (
+                    <li key={index}>
+                        <p><strong>Question:</strong> {item.question}</p>
+                        <p><strong>Your Answer:</strong> {item.userAnswer}</p>
+                        <p><strong>Correct Answer:</strong> {item.correctAnswer}</p>
+                        <br></br>
+                    </li>
+                ))}
+            </>:
+        <></>
+        }
             </ul>
         </div>
         
