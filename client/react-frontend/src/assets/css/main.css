@@ -7,9 +7,10 @@ body {
     padding: 0; 
     /* margin 0 and padding 0 is for NavBar so it's gonna stick on the edge with no empty space */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     }
 
 td{

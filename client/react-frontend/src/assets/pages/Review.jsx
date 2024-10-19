@@ -18,26 +18,27 @@ function Review() {
     
     return (
         <>
-        <div className='box'>
-            <h2>Review Your Incorrect Answers Here</h2>
-            <ul>
+            <div className='empty'></div>
+            <div className='box'>
+                <h2>Review Your Incorrect Answers Here</h2>
+                <ul>
 
-        {/* ternary statement to check if there are wrong answers */}
-        {incorrectAnswers.length > 0 ? 
-            <>
-                {incorrectAnswers.map((item, index) => (
-                    <li key={index}>
-                        <p><strong>Question:</strong> {item.question}</p>
-                        <p><strong>Your Answer:</strong> {item.userAnswer}</p>
-                        <p><strong>Correct Answer:</strong> {item.correctAnswer}</p>
-                        <br></br>
-                    </li>
-                ))}
-            </>:
-        <></>
-        }
-            </ul>
-        </div>
+            {/* ternary statement to check if there are wrong answers */}
+            {incorrectAnswers.length > 0 ? 
+                <>
+                    {incorrectAnswers.map((item, index) => (
+                        <li key={index}>
+                            <p><strong>Question:</strong> {item.question}</p>
+                            <p><strong>Your Answer:</strong> {item.userAnswer}</p>
+                            <p><strong>Correct Answer:</strong> {item.correctAnswer}</p>
+                            <br></br>
+                        </li>
+                    ))}
+                </>:
+            <></>
+            }
+                </ul>
+            </div>
         
         {/* show button when there are incorrect answer that haven't been reviewed */}
         {incorrectAnswers.length > 0 && (
