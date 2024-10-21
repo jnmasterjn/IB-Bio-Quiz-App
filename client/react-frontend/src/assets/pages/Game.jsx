@@ -23,8 +23,14 @@ function Game(){
     const [AnswerMessage, SetAnswerMessage] = useState("")
     const [MessageColor, SetMessageColor] = useState('')
     const [IncorrectAnswers, SetIncorrectAnswers] = useState([])
-    
 
+    //so old incorrect answer don't get delte after a new game. 
+    useEffect(() => {
+        const storedAnswers = JSON.parse(localStorage.getItem("incorrectAnswers"));
+        if (storedAnswers) {
+        SetIncorrectAnswers(storedAnswers);
+        }
+    }, []);
 
     useEffect( () => {
         quiz()
