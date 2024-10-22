@@ -3,161 +3,118 @@ from django.db import transaction
 
 quizzes = [
     Quiz(
-        question="What leads to allopatric speciation?",
-        answer="Geographical isolation, causing populations to diverge genetically and eventually become reproductively isolated.",
-        optionOne="Geographical isolation, causing populations to diverge genetically and eventually become reproductively isolated.",
-        optionTwo="Behavioural isolation, preventing individuals from recognising each other’s mating rituals.",
-        optionThree="Differences in timing of reproductive cycles within the same area."
+        question="What is the role of helicase in DNA replication?",
+        answer="Helicase unwinds the DNA double helix by breaking hydrogen bonds between the base pairs.",
+        optionOne="Helicase unwinds the DNA double helix by breaking hydrogen bonds between the base pairs.",
+        optionTwo="Helicase synthesizes the new DNA strand.",
+        optionThree="Helicase joins Okazaki fragments together."
     ),
-    
-    # Sympatric Speciation
     Quiz(
-        question="What is an example of sympatric speciation in progress?",
-        answer="Apple maggot flies, where flies are diverging based on host plant preferences within the same geographical area.",
-        optionOne="Apple maggot flies, where flies are diverging based on host plant preferences within the same geographical area.",
-        optionTwo="Galapagos finches, which diverged due to isolation on different islands.",
-        optionThree="Kaibab squirrels, which were isolated by the formation of the Grand Canyon."
+        question="Which enzyme is responsible for adding nucleotides to the growing DNA strand during replication?",
+        answer="DNA polymerase.",
+        optionOne="DNA polymerase.",
+        optionTwo="DNA ligase.",
+        optionThree="RNA polymerase."
     ),
-    
-    # Mechanisms of Reproductive Isolation
     Quiz(
-        question="Which type of reproductive isolation occurs due to differences in mating rituals or courtship behaviors?",
-        answer="Behavioural isolation.",
-        optionOne="Behavioural isolation.",
-        optionTwo="Geographical isolation.",
-        optionThree="Temporal isolation."
+        question="In which direction does DNA polymerase synthesize the new DNA strand?",
+        answer="In the 5' to 3' direction.",
+        optionOne="In the 5' to 3' direction.",
+        optionTwo="In the 3' to 5' direction.",
+        optionThree="In both directions."
     ),
-    
-    # Geographical Isolation Example
     Quiz(
-        question="Which species is an example of allopatric speciation due to a geographical barrier?",
-        answer="Kaibab squirrels and Abert squirrels, which were separated by the Grand Canyon.",
-        optionOne="Kaibab squirrels and Abert squirrels, which were separated by the Grand Canyon.",
-        optionTwo="Apple maggot flies, which diverged based on their choice of host plant.",
-        optionThree="Fireflies, which evolved different light patterns."
+        question="What is the function of primase during DNA replication?",
+        answer="Primase synthesizes a short RNA primer to provide a starting point for DNA synthesis.",
+        optionOne="Primase synthesizes a short RNA primer to provide a starting point for DNA synthesis.",
+        optionTwo="Primase synthesizes the Okazaki fragments.",
+        optionThree="Primase removes RNA primers after replication."
     ),
-    
-    # Temporal Isolation
+    # Protein Synthesis
     Quiz(
-        question="What is an example of temporal isolation leading to reproductive isolation?",
-        answer="Two species of cicadas with different life cycles, maturing at different times.",
-        optionOne="Two species of cicadas with different life cycles, maturing at different times.",
-        optionTwo="Male fireflies of different species using different light patterns.",
-        optionThree="Kaibab squirrels separated by the Grand Canyon."
+        question="What is the first step of protein synthesis called?",
+        answer="Transcription.",
+        optionOne="Transcription.",
+        optionTwo="Translation.",
+        optionThree="Replication."
     ),
-    
-    # Sympatric Speciation Mechanism
     Quiz(
-        question="What is a key factor in sympatric speciation?",
-        answer="Isolation mechanisms such as behavioural or temporal isolation occurring within the same geographical area.",
-        optionOne="Isolation mechanisms such as behavioural or temporal isolation occurring within the same geographical area.",
-        optionTwo="Physical barriers that prevent gene flow between populations.",
-        optionThree="The introduction of a geographical barrier, like a mountain range."
+        question="Which molecule carries amino acids to the ribosome during translation?",
+        answer="tRNA.",
+        optionOne="tRNA.",
+        optionTwo="mRNA.",
+        optionThree="rRNA."
     ),
-    # Adaptive Radiation
     Quiz(
-        question="What is adaptive radiation?",
-        answer="The rapid evolution of an ancestral species into multiple species that exploit different ecological niches.",
-        optionOne="The rapid evolution of an ancestral species into multiple species that exploit different ecological niches.",
-        optionTwo="The gradual evolution of species without divergence into separate ecological niches.",
-        optionThree="The extinction of species due to competition for resources."
+        question="Where does transcription occur in eukaryotic cells?",
+        answer="In the nucleus.",
+        optionOne="In the nucleus.",
+        optionTwo="In the cytoplasm.",
+        optionThree="In the ribosome."
     ),
-    
-    # Example of Adaptive Radiation
     Quiz(
-        question="Which of the following is an example of adaptive radiation?",
-        answer="Darwin’s finches on the Galapagos Islands.",
-        optionOne="Darwin’s finches on the Galapagos Islands.",
-        optionTwo="The hybridisation of a mule from a horse and a donkey.",
-        optionThree="The crossing of wheat and rye plants to form hybrid offspring."
+        question="What is the role of mRNA during protein synthesis?",
+        answer="It carries the genetic information from DNA to the ribosome.",
+        optionOne="It carries the genetic information from DNA to the ribosome.",
+        optionTwo="It transports amino acids to the ribosome.",
+        optionThree="It forms the core structure of the ribosome."
     ),
-    
-    # Importance of Adaptive Radiation
+    # Cell Cycle and Division
     Quiz(
-        question="How does adaptive radiation contribute to biodiversity?",
-        answer="It allows closely related species to exploit different ecological niches, reducing competition and increasing species diversity.",
-        optionOne="It allows closely related species to exploit different ecological niches, reducing competition and increasing species diversity.",
-        optionTwo="It forces species to compete for the same resources, leading to the survival of only the fittest species.",
-        optionThree="It results in the extinction of species that fail to adapt to the same ecological niche."
+        question="What happens during the G1 phase of the cell cycle?",
+        answer="The cell grows and carries out normal functions.",
+        optionOne="The cell grows and carries out normal functions.",
+        optionTwo="The cell divides into two daughter cells.",
+        optionThree="The DNA is replicated."
     ),
-    
-    # Barriers to Hybridisation
     Quiz(
-        question="What are prezygotic barriers in hybridisation?",
-        answer="Mechanisms that prevent fertilisation, such as behavioural isolation or differences in courtship behaviour.",
-        optionOne="Mechanisms that prevent fertilisation, such as behavioural isolation or differences in courtship behaviour.",
-        optionTwo="Mechanisms that occur after fertilisation, such as hybrid sterility.",
-        optionThree="Mechanisms that increase the fertility of hybrids."
+        question="During which phase of mitosis do sister chromatids separate?",
+        answer="Anaphase.",
+        optionOne="Anaphase.",
+        optionTwo="Prophase.",
+        optionThree="Metaphase."
     ),
-    
-    # Sterility of Interspecific Hybrids
     Quiz(
-        question="Why are mules, the offspring of a donkey and a horse, sterile?",
-        answer="Mules have an uneven number of chromosomes (63), preventing proper homologous chromosome pairing during meiosis.",
-        optionOne="Mules have an uneven number of chromosomes (63), preventing proper homologous chromosome pairing during meiosis.",
-        optionTwo="Mules are genetically incompatible with both parent species due to a lack of shared genes.",
-        optionThree="Mules are produced by postzygotic barriers that prevent the formation of reproductive organs."
+        question="What is the main purpose of mitosis?",
+        answer="To produce two genetically identical daughter cells.",
+        optionOne="To produce two genetically identical daughter cells.",
+        optionTwo="To produce four genetically diverse daughter cells.",
+        optionThree="To replicate the cell’s DNA."
     ),
-    
-    # Example of Postzygotic Barrier
     Quiz(
-        question="Which of the following is a postzygotic barrier to hybridisation?",
-        answer="Reduced fertility of the hybrid, such as in the case of a mule.",
-        optionOne="Reduced fertility of the hybrid, such as in the case of a mule.",
-        optionTwo="Differences in courtship behavior that prevent mating between species.",
-        optionThree="Differences in the timing of reproductive cycles that prevent species from mating."
+        question="Which phase of the cell cycle involves the replication of DNA?",
+        answer="S phase.",
+        optionOne="S phase.",
+        optionTwo="G2 phase.",
+        optionThree="M phase."
     ),
-    # Polyploidy Definition
+    # Nucleic Acids
     Quiz(
-        question="What is polyploidy?",
-        answer="A condition where a cell or organism acquires one or more additional sets of chromosomes.",
-        optionOne="A condition where a cell or organism acquires one or more additional sets of chromosomes.",
-        optionTwo="A condition where a cell loses chromosomes during mitosis.",
-        optionThree="A mutation in the DNA sequence of a gene, causing genetic variation."
+        question="What are the building blocks of nucleic acids?",
+        answer="Nucleotides.",
+        optionOne="Nucleotides.",
+        optionTwo="Amino acids.",
+        optionThree="Fatty acids."
     ),
-    
-    # Example of Polyploidy
     Quiz(
-        question="Which of the following is an example of a polyploid organism?",
-        answer="A plant with 42 chromosomes (n=7) is hexaploid (6n).",
-        optionOne="A plant with 42 chromosomes (n=7) is hexaploid (6n).",
-        optionTwo="A plant with 14 chromosomes (n=7) is diploid (2n).",
-        optionThree="A plant with 21 chromosomes (n=7) is triploid (3n)."
+        question="Which nitrogenous base is found in RNA but not DNA?",
+        answer="Uracil.",
+        optionOne="Uracil.",
+        optionTwo="Thymine.",
+        optionThree="Adenine."
     ),
-    
-    # Even vs Odd Polyploids
     Quiz(
-        question="Why are polyploids with odd numbers of chromosomes typically sterile?",
-        answer="Odd chromosome numbers cause problems during meiosis as chromosomes cannot pair up correctly.",
-        optionOne="Odd chromosome numbers cause problems during meiosis as chromosomes cannot pair up correctly.",
-        optionTwo="Odd chromosome numbers lead to excessive DNA replication, causing sterility.",
-        optionThree="Odd chromosome numbers prevent fertilisation by other species."
+        question="Which sugar is present in the structure of DNA?",
+        answer="Deoxyribose.",
+        optionOne="Deoxyribose.",
+        optionTwo="Ribose.",
+        optionThree="Glucose."
     ),
-    
-    # Allopolyploidy Definition
     Quiz(
-        question="What is allopolyploidy?",
-        answer="A form of polyploidy where multiple chromosome sets come from different parental species.",
-        optionOne="A form of polyploidy where multiple chromosome sets come from different parental species.",
-        optionTwo="A mutation that occurs due to chromosome deletions during meiosis.",
-        optionThree="A condition where chromosome numbers are halved during reproduction."
-    ),
-    
-    # Allopolyploidy Example
-    Quiz(
-        question="Which of the following crops is an example of an allopolyploid?",
-        answer="Tobacco and wheat are examples of allopolyploid crops.",
-        optionOne="Tobacco and wheat are examples of allopolyploid crops.",
-        optionTwo="Bananas and strawberries are examples of allopolyploid crops.",
-        optionThree="Rice and corn are examples of allopolyploid crops."
-    ),
-    
-    # Role of Polyploidy in Speciation
-    Quiz(
-        question="How does polyploidy contribute to speciation in plants?",
-        answer="Polyploidy can result in new species that cannot interbreed with the original parent species, leading to reproductive isolation.",
-        optionOne="Polyploidy can result in new species that cannot interbreed with the original parent species, leading to reproductive isolation.",
-        optionTwo="Polyploidy leads to identical offspring without any genetic variation.",
-        optionThree="Polyploidy causes mutations that make the offspring more susceptible to diseases."
+        question="What type of bond holds the two strands of a DNA molecule together?",
+        answer="Hydrogen bonds.",
+        optionOne="Hydrogen bonds.",
+        optionTwo="Phosphodiester bonds.",
+        optionThree="Covalent bonds."
     )
 ]
