@@ -16,7 +16,7 @@ function Rule(){
         
             <div>
                 <h2>Welcome to the game! Here are the rules:</h2>
-                    <li><b>Time Limit:</b> You have 5 seconds to answer each question.</li>
+                    <li><b>Time Limit:</b> You have 30 seconds to answer each question.</li>
                         <br/>
                     <li><b>Scoring:</b> You will earn 1 point for each correct answer.</li>
                         <br/>
