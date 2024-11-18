@@ -19,7 +19,7 @@ function Game(){
     const [CurrentQuestionIndex, SetCurrentQuestionIndex] = useState(0) //keep track of the current question's index, start with [0]
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
-    const [TimeLeft, SetTimeLeft] = useState(30) //30 seconds for each question
+    const [TimeLeft, SetTimeLeft] = useState(300) //30 seconds for each question
     const [AnswerMessage, SetAnswerMessage] = useState("")
     const [MessageColor, SetMessageColor] = useState('')
     const [IncorrectAnswers, SetIncorrectAnswers] = useState([])
@@ -117,7 +117,7 @@ function Game(){
         //     path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
         // }
         SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
-        SetTimeLeft(30)
+        SetTimeLeft(300)
 
         SetHasAnswered(false)
         
