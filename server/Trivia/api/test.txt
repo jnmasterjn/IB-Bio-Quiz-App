@@ -1,6 +1,0 @@
-{
-"username": "janice",
-"password": "iuhsfwuryfiwr",
-"email": "weyhrf9wurehu@gmail.com"
-}
-82daf75b9c884900a3004978bbe23b3352d5751e
