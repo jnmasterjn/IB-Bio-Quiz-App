@@ -30,8 +30,10 @@ function Review() {
                         <li key={index}>
                             <br/>
                             <p><strong>Question:</strong> {item.question}</p>
-                            <p><strong>Your Answer:</strong> {item.userAnswer}</p>
-                            <p><strong>Correct Answer:</strong> {item.correctAnswer}</p>
+                            <p style={{backgroundColor: '#FF7F7F',borderRadius: '5px',padding:'10px'}} className='r-p'>
+                                <strong>Your Answer:</strong> {item.userAnswer}</p>
+                            <p style={{backgroundColor: '#66CDAA', borderRadius: '5px', padding:'10px'}} className='r-p'>
+                                <strong>Correct Answer:</strong> {item.correctAnswer}</p>
                             <br></br>
                         </li>
                     ))}

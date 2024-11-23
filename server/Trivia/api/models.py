@@ -17,3 +17,7 @@ class GameStats(models.Model):
 
     def __str__(self):
         return f"Username: {self.user.username} | Score: {self.score}"
+
+
+
+

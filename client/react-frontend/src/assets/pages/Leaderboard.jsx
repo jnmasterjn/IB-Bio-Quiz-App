@@ -23,7 +23,7 @@ function Leaderboard() {
         <div className='box'>
             <title>Leaderboard</title>
             <h1>Leaderboard</h1>
-
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
             <table>
                 <tr>
                     <th>Rank</th>
@@ -39,6 +39,7 @@ function Leaderboard() {
                     </tr>
                 ))}
             </table>
+            </div>
         <br/>
         <Link to='../Home'><button>Back to home</button></Link>
         </div>
