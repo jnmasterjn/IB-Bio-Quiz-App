@@ -6,7 +6,7 @@ function About() {
     return (
         <div className='box'>
             <h1>Overwhelmed with IB Biology's disastrous amount of units?</h1>
-            <h3>"Don't worry, I got you. Welcome to IB BioMaster!"</h3>
+            <h3>"Don't worry, I got you."</h3>
             <br></br>
             <p>This web app is designed to aid IB Biology students (SL/HL) in studying for their exams.</p>
             <p>All questions are IB-tailored, extracted from public IB databases, IB study guides, and my biology notes (I promise they're good).</p>

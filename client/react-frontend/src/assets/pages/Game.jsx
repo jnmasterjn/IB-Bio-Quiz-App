@@ -131,11 +131,11 @@ function Game(){
         SetScore(Score+1)
 
         SetMessageColor('green')
-        SetAnswerMessage("CORRECT")
+        SetAnswerMessage("Correct")
 
     }else{
         SetMessageColor('red')
-        SetAnswerMessage(`WRONG, correct answer: ${currentQuestion.answer}`)
+        SetAnswerMessage("Wrong")
     }
 
     SetHasAnswered(true) //has answered the question, so can't press the buttons again

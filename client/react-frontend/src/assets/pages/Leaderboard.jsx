@@ -23,6 +23,8 @@ function Leaderboard() {
         <div className='box'>
             <title>Leaderboard</title>
             <h1>Leaderboard</h1>
+            <p>🔔 Note: The leaderboard ranks players based on their total score, 
+                which is calculated by adding up scores from all the games they’ve played.</p>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
             <table>
                 <tr>

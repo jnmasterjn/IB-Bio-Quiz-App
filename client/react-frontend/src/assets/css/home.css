@@ -60,7 +60,7 @@ button:active {
 }
 
 .h-button {
-    width: 150px; /* Increased horizontal size */
+    width: 300px;
     height: 100px;
     border-radius: 20px; 
     font-size: 16px;

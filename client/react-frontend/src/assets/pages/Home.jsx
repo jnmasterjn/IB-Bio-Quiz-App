@@ -8,9 +8,9 @@ function Home() {
         <div className="box">
             <title>Home</title>
             <div>
-                <h1>Welcome Back, {name}!</h1>
+                <h1>Welcome back to IB BioMaster, {name}!</h1>
                 <p style={{ fontStyle: "italic", fontSize: "18px" }}>
-                    "Ready to conquer IB Biology today?"
+                    Ready to conquer IB Biology today?
                 </p>
 
                 <div style={{ margin: "20px 0", display: "flex", gap: "20px", justifyContent: "center" }}>
@@ -28,7 +28,7 @@ function Home() {
                 </div>
 
                 <div>
-                    <p>💡 Tip of the Day: Practice makes perfect! Take on a quiz and climb the leaderboard. 💡</p>
+                    <p>💡 Tip of the Day: Practice makes perfect! Take on a quiz and climb the leaderboard.</p>
                 </div>
             </div>
         </div>
