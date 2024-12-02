@@ -5,8 +5,6 @@ import {useNavigate, Link} from "react-router-dom"
 import '../css/main.css'
 import axios from 'axios';
 
-
-
 function Game(){
 
     const name = localStorage.getItem('name')
@@ -20,7 +18,7 @@ function Game(){
     const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
     const [Score, SetScore] = useState(0)
     const [TimeLeft, SetTimeLeft] = useState(30) //30 seconds for each question
-    const [AnswerMessage, SetAnswerMessage] = useState("")
+    const [AnswerMessage, SetAnswerMessage] = useState('')
     const [MessageColor, SetMessageColor] = useState('')
     const [IncorrectAnswers, SetIncorrectAnswers] = useState([])
 
@@ -96,26 +94,19 @@ function Game(){
         let newIncorrectAnswers = [...IncorrectAnswers];
 
         if (selectedAnswer !== currentQuestion.answer) {
-        // Save incorrect answer details
-        newIncorrectAnswers.push({
-            question: currentQuestion.question,
-            correctAnswer: currentQuestion.answer,
-            userAnswer: selectedAnswer,
-        });
-    }
-        // Update state and localStorage
-        SetIncorrectAnswers(newIncorrectAnswers);
-        localStorage.setItem('incorrectAnswers', JSON.stringify(newIncorrectAnswers)); //store wrong ans for review.jsx
+            // Save incorrect answer details
+            newIncorrectAnswers.push({
+                question: currentQuestion.question,
+                correctAnswer: currentQuestion.answer,
+                userAnswer: selectedAnswer,
+            });
+            //update state and localStorage
+            SetIncorrectAnswers(newIncorrectAnswers);
+            //store wrong ans for review.jsx
+            localStorage.setItem('incorrectAnswers', JSON.stringify(newIncorrectAnswers)); 
+        }
 
         setTimeout( () => {
-        // if (CurrentQuestionIndex < 9){ //10 questions per round
-        //     SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
-        //     SetTimeLeft(5)
-        // }else{
-        //     SubmitScore(Score) //send user score to the backend
-
-        //     path('../result', {state: {Score}}) //pass Score as an object and use useLocation on the result page to use this data
-        // }
         SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
         SetTimeLeft(30)
 

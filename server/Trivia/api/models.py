@@ -12,7 +12,7 @@ class Quiz(models.Model):
         return f"Question: {self.question} | Options: {self.optionOne}, {self.optionTwo}, {self.optionThree}"
 
 class GameStats(models.Model):
-    user = models.ForeignKey(User,on_delete = models.CASCADE, null=True)
+    user = models.ForeignKey(User,on_delete = models.CASCADE)
     score = models.IntegerField(default=0)
 
     def __str__(self):
