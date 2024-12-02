@@ -22,7 +22,7 @@ function Game(){
     const [MessageColor, SetMessageColor] = useState('')
     const [IncorrectAnswers, SetIncorrectAnswers] = useState([])
 
-    //so old incorrect answer don't get delte after a new game. 
+    //so old incorrect answer don't get delete after a new game. 
     useEffect(() => {
         const storedAnswers = JSON.parse(localStorage.getItem("incorrectAnswers"));
         if (storedAnswers) {
@@ -37,16 +37,17 @@ function Game(){
                 //creates a new object based on q
                 const QuestionWithShuffleOptions = RandomQuestion.map( q => ({
                     ...q, 
-                    options: FisherShuffle([q.optionOne, q.optionTwo, q.optionThree]) //This adds a property named options in the new object.
+                    options: FisherShuffle([q.optionOne, q.optionTwo, q.optionThree]) 
+                    //This adds a property named options in the new object.
                 }))
-                SetQuestions(QuestionWithShuffleOptions) //this question object now contains the shuffle options too
+                SetQuestions(QuestionWithShuffleOptions) 
+                //this question object now contains the shuffle options too
 
             })
             .catch( (error) => {
                 console.error(error)
             })
-    },[]
-    ) //renders once element mounts, fetch data from server
+    },[]) //renders once element mounts, fetch data from server
 
     useEffect( () => {
         if (TimeLeft > 0){

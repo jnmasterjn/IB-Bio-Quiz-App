@@ -1,5 +1,10 @@
 import ReactDOM from 'react-dom/client'
 import React from 'react'
+import { AuthProvider } from './assets/authentication/Auth'
+import ProtectedRoute from './assets/authentication/ProtectRoute'
+import NavBar from './assets/component/Nav'
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signin from './assets/pages/Signin'
 import Signup from './assets/pages/Signup'
 import Game from './assets/pages/Game'
@@ -10,11 +15,6 @@ import Rule from './assets/pages/Rule'
 import Contact from './assets/pages/Contact'
 import Review from './assets/pages/Review'
 import About from './assets/pages/About'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { AuthProvider } from './assets/authentication/Auth'
-import ProtectedRoute from './assets/authentication/ProtectRoute'
-import NavBar from './assets/component/Nav'
-
 
 const myrouter = createBrowserRouter([
   {

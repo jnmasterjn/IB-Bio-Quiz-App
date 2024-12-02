@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function Review() {
+
     const [incorrectAnswers, setIncorrectAnswers] = useState([]);
 
     // Load incorrect answers from localStorage when the component mounts
@@ -45,9 +46,8 @@ function Review() {
         {/* show button when there are incorrect answer that haven't been reviewed */}
         {incorrectAnswers.length > 0 && (
         <button
-            onClick={(e) => {
+            onClick={() => {
                 clearIncorrectAnswers(); // Clear answers
-                e.target.innerText = "Please refresh the page";
             }}>
         I have reviewed all my wrong answers.
         </button>
