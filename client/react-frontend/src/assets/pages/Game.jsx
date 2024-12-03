@@ -13,16 +13,16 @@ function Game(){
 
     const path = useNavigate()
 
-    const [questions, SetQuestions] = useState([])
-    const [CurrentQuestionIndex, SetCurrentQuestionIndex] = useState(0) //keep track of the current question's index, start with [0]
-    const [hasAnswered, SetHasAnswered] = useState(false) //user can only answer each question once
-    const [Score, SetScore] = useState(0)
-    const [TimeLeft, SetTimeLeft] = useState(30) //30 seconds for each question
-    const [AnswerMessage, SetAnswerMessage] = useState('')
-    const [MessageColor, SetMessageColor] = useState('')
-    const [IncorrectAnswers, SetIncorrectAnswers] = useState([])
+    const [questions, SetQuestions] = useState([]) // store quiz questions
+    const [CurrentQuestionIndex, SetCurrentQuestionIndex] = useState(0) //  track current question's index
+    const [hasAnswered, SetHasAnswered] = useState(false) // prevent multiple answers
+    const [Score, SetScore] = useState(0) // user score
+    const [TimeLeft, SetTimeLeft] = useState(30) // time left for each question
+    const [AnswerMessage, SetAnswerMessage] = useState('') // feedback message
+    const [MessageColor, SetMessageColor] = useState('') // feedback message color
+    const [IncorrectAnswers, SetIncorrectAnswers] = useState([]) // track incorrect answers
 
-    //so old incorrect answer don't get delete after a new game. 
+    //so old incorrect answer don't get delete after a new game.
     useEffect(() => {
         const storedAnswers = JSON.parse(localStorage.getItem("incorrectAnswers"));
         if (storedAnswers) {
@@ -31,34 +31,32 @@ function Game(){
     }, []);
 
     useEffect( () => {
-        quiz()
+        quiz() //calls quiz() to fetch questions from server
             .then( (serverresponse) => {
+                //shuffle the question using Fisher-Yates algorithm
                 const RandomQuestion = FisherShuffle(serverresponse.data) 
-                //creates a new object based on q
                 const QuestionWithShuffleOptions = RandomQuestion.map( q => ({
                     ...q, 
-                    options: FisherShuffle([q.optionOne, q.optionTwo, q.optionThree]) 
-                    //This adds a property named options in the new object.
+                    options: FisherShuffle([q.optionOne, q.optionTwo, q.optionThree]) //add shuffled options
                 }))
                 SetQuestions(QuestionWithShuffleOptions) 
-                //this question object now contains the shuffle options too
-
+                //update state with shuffled questions, options 
             })
             .catch( (error) => {
-                console.error(error)
+                console.error(error) //log errors
             })
-    },[]) //renders once element mounts, fetch data from server
+    },[]) //run once on component mount
 
     useEffect( () => {
         if (TimeLeft > 0){
             const timer = setTimeout( () => {
-                SetTimeLeft(TimeLeft-1)
+                SetTimeLeft(TimeLeft-1) //decrease time by 1 every second
             },1000)
 
-            return ()=> clearTimeout(timer) //clear the timer when components unmounts / timeLeft changes
+            return ()=> clearTimeout(timer) //clear timer on unmounts/TimeLeft changes
 
             }else{
-                HandleUserAnswer(null) //if the timer runs out
+                HandleUserAnswer(null) //run effect when TimeLeft changes
             } 
         },
         [TimeLeft])
@@ -91,25 +89,25 @@ function Game(){
             return
         } //if user alr answered this question, they can't answer again
 
-         // Track incorrect answers
+         //track incorrect answers
         let newIncorrectAnswers = [...IncorrectAnswers];
 
         if (selectedAnswer !== currentQuestion.answer) {
-            // Save incorrect answer details
+            //save incorrect answer details
             newIncorrectAnswers.push({
                 question: currentQuestion.question,
                 correctAnswer: currentQuestion.answer,
                 userAnswer: selectedAnswer,
             });
-            //update state and localStorage
+            //update state with the new incorrect answers
             SetIncorrectAnswers(newIncorrectAnswers);
-            //store wrong ans for review.jsx
+            //store the incorrect answers in localStorage for review purposes
             localStorage.setItem('incorrectAnswers', JSON.stringify(newIncorrectAnswers)); 
         }
 
         setTimeout( () => {
-        SetCurrentQuestionIndex(CurrentQuestionIndex+1) 
-        SetTimeLeft(30)
+        SetCurrentQuestionIndex(CurrentQuestionIndex+1) //increament current question index
+        SetTimeLeft(30)//reset timer to 30 seconds for next question
 
         SetHasAnswered(false)
         
@@ -136,16 +134,17 @@ function Game(){
 
     const SubmitScore = (score) => {
 
+        //retrieve user token from localStorage
         const token = localStorage.getItem('token')
 
         return axios.post(`${API_URL}/score/`, 
-        {score: score}, //score is the payload send to the backend function
+        {score: score}, //send the score as payload to the backend
             {
-                headers: { 'Authorization': `Token ${token}`} //make sure user is logged in
+                headers: { 'Authorization': `Token ${token}`} //include authorization header
             }
         ) 
         .then( (response) =>{
-            console.log("success sending score", response.data)
+            console.log("success sending score", response.data) //log success response
         })
 
         .catch( (error) =>{

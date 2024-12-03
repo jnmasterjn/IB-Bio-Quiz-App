@@ -8,11 +8,12 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import Quiz, GameStats
 
+# serializer for the User model to handle serialization & deserialization
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'password']
-        extra_kwargs = {'password': {'write_only': True}} #security reasons
+        fields = ['id', 'username', 'password'] # The fields to include in the serialized output
+        extra_kwargs = {'password': {'write_only': True}} # write_only for security reasons
 
 class QuizSerializer(serializers.ModelSerializer):
     class Meta:

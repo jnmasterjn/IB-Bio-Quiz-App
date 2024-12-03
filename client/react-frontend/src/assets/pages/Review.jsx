@@ -4,17 +4,17 @@ function Review() {
 
     const [incorrectAnswers, setIncorrectAnswers] = useState([]);
 
-    // Load incorrect answers from localStorage when the component mounts
+    //load incorrect answers from localStorage when component mounts
     useEffect(() => {
-        const storedAnswers = JSON.parse(localStorage.getItem('incorrectAnswers'));
+        const storedAnswers = JSON.parse(localStorage.getItem('incorrectAnswers')); //retrieve and parse stored data
         if (storedAnswers) {
-            setIncorrectAnswers(storedAnswers);
+            setIncorrectAnswers(storedAnswers); //update state with retrieved answers
         }
-    }, []);
+    }, []); //run once on component mount
 
     function clearIncorrectAnswers(){
-        localStorage.removeItem('incorrectAnswers');
-        setIncorrectAnswers([])
+        localStorage.removeItem('incorrectAnswers'); //remove incorrect answers from localStorage
+        setIncorrectAnswers([]) //reset state to an empty array
     }
     
     return (
@@ -24,7 +24,7 @@ function Review() {
                 <h2>Review Your Incorrect Answers Here</h2>
                 <ul>
 
-            {/* ternary statement to check if there are wrong answers */}
+            {/* ternary statement to check if there are wrong answers stored*/}
             {incorrectAnswers.length > 0 ? 
                 <>
                     {incorrectAnswers.map((item, index) => (
@@ -38,12 +38,12 @@ function Review() {
                             <br></br>
                         </li>
                     ))}
-                </>:
-                
+                </>:    
+                // render nothing if there are no incorrect answers
             <></>
             }
                 </ul>
-        {/* show button when there are incorrect answer that haven't been reviewed */}
+        {/* show button if there are incorrect answers that haven't been reviewed */}
         {incorrectAnswers.length > 0 && (
         <button
             onClick={() => {

@@ -31,16 +31,16 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    "corsheaders",
+    "corsheaders",  # handles Cross-Origin Resource Sharing, bridge between frontend & backend
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "api",
-    "rest_framework",
-    "rest_framework.authtoken",
+    "api", # custom app for APIs and models
+    "rest_framework", # Django REST Framework for building APIs
+    "rest_framework.authtoken", # Django REST Framework for building APIs
 ]
 
 REST_FRAMEWORK = {
@@ -128,8 +128,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = True # allow authentication credentials to be included in cross-origin requests
 
-CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_HEADERS = ['*'] # allow all headers in cross-origin requests
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:5173'] #connect to react
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173'] # allow requests from the React frontend

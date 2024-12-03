@@ -13,7 +13,7 @@ def signup(request):
     #linking it with serializer.py, whatever user tries to signup they need to provide 'field' from that doc
     #which includes username, password, and email (id is always there by default)
     serializer = UserSerializer(data = request.data)
- 
+
     #Check if the provided data is valid, then save the validated data to create a new user
     if serializer.is_valid():
         user = serializer.save()

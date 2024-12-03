@@ -3,34 +3,30 @@ import React from 'react'
 import { AuthProvider } from './assets/authentication/Auth'
 import ProtectedRoute from './assets/authentication/ProtectRoute'
 import NavBar from './assets/component/Nav'
-
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Signin from './assets/pages/Signin'
-import Signup from './assets/pages/Signup'
 import Game from './assets/pages/Game'
 import Leaderboard from './assets/pages/Leaderboard'
-import Home from './assets/pages/Home'
 import Result from './assets/pages/Result'
 import Rule from './assets/pages/Rule'
 import Contact from './assets/pages/Contact'
 import Review from './assets/pages/Review'
 import About from './assets/pages/About'
 
-const myrouter = createBrowserRouter([
-  {
-    path:"signin",
-    element: <Signin/>
-  },
-  
-  {
-    path:"signup",
-    element: <Signup/>
-  },
 
-  {
-    path:"home",
-    element: <ProtectedRoute element ={<Home/>}/>
-  },
+import { createBrowserRouter, RouterProvider } from 'react-router-dom' // import routing components
+import Signin from './assets/pages/Signin' // import Signin page component
+import Signup from './assets/pages/Signup' // import Signup page component
+import Home from './assets/pages/Home' // import Home page component
+
+// define the router configuration
+const myrouter = createBrowserRouter([
+  {path:"signin", // signin route
+    element: <Signin/>},
+
+  {path:"signup", // signup route
+    element: <Signup/>},
+
+  {path:"home", // protected home route
+    element: <ProtectedRoute element ={<Home/>}/>},
 
   {
     path:"game",
