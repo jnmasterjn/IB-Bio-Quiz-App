@@ -121,11 +121,11 @@ function Game(){
         SetScore(Score+1)
 
         SetMessageColor('green')
-        SetAnswerMessage("Correct")
+        SetAnswerMessage("CORRECT!")
 
     }else{
         SetMessageColor('red')
-        SetAnswerMessage("Wrong")
+        SetAnswerMessage("Oops..")
     }
 
     SetHasAnswered(true) //has answered the question, so can't press the buttons again
@@ -161,8 +161,8 @@ function Game(){
         <div>
             <title>Game</title>
     
-            <h4>Player: {name}</h4>
-            <h4>Time Left: {TimeLeft}</h4>
+            <h4 className="time-left">Player: {name}</h4>
+            <h4 className="time-left">Time Left: {TimeLeft}</h4>
             <h1>Question {CurrentQuestionIndex+1}</h1>
 
             <h2>{currentQuestion.question}</h2>
@@ -176,11 +176,9 @@ function Game(){
                 </button>
             ))}
             </div>
-            
-            <p style={{color: MessageColor}}>{AnswerMessage}</p>
-
+            <strong><p style={{color: MessageColor}}>{AnswerMessage}</p></strong>
+            <h5 className="quit-game"><Link to = '../home'>Quit Game</Link></h5>
         </div>
-        <h5><Link to = '../home'>Quit Game</Link></h5>
     </div>
         </>
     );

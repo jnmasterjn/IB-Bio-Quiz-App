@@ -18,10 +18,10 @@ td{
 }
 
 button{
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 5px;
     padding:5px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 nav{
