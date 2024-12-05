@@ -159,11 +159,13 @@ function Game(){
     return (<>
     <div className="box">
         <div>
-            <title>Game</title>
+            <title className="game-title">Game</title>
     
             <h4 className="time-left">Player: {name}</h4>
             <h4 className="time-left">Time Left: {TimeLeft}</h4>
-            <h1>Question {CurrentQuestionIndex+1}</h1>
+            <h4 className="time-left">Question {CurrentQuestionIndex+1}/10</h4>
+            <h1 className="question-index">Question {CurrentQuestionIndex+1}</h1>
+            <br/>
 
             <h2>{currentQuestion.question}</h2>
 
@@ -177,7 +179,7 @@ function Game(){
             ))}
             </div>
             <strong><p style={{color: MessageColor}}>{AnswerMessage}</p></strong>
-            <h5 className="quit-game"><Link to = '../home'>Quit Game</Link></h5>
+            <h5 className="quit-game"><Link to = '../home'>Quit Game:(</Link></h5>
         </div>
     </div>
         </>

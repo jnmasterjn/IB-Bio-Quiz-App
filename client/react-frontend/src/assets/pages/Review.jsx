@@ -20,7 +20,7 @@ function Review() {
     return (
         <>
             <div className='empty'></div>
-            <div className='box'>
+            <div className='reivew-box'>
                 <h2>Review Your Incorrect Answers Here</h2>
                 <ul>
 

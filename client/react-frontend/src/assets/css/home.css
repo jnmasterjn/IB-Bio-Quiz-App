@@ -6,6 +6,15 @@
     border-radius: 40px;
     background-color: rgb(249, 196, 204);
     padding: 50px;
+    width: auto;
+    margin-top: 50px;
+}
+
+.reivew-box{
+    border-radius: 40px;
+    background-color: rgb(249, 196, 204);
+    padding: 50px;
+    width: 800px;
 }
 
 .game-button{
@@ -87,4 +96,17 @@ button:active {
 
 .quit-game{
     text-align: right;
+}
+
+.question-index{
+    display: block; /* Ensures the title behaves like a block element */
+    text-align: center; /* Center-align the title */
+    padding: 10px 10px; /* Add spacing inside the border */
+    margin: 10px auto; /* Add space around the title */
+    border: 2px solid #1c1111; /* Red border */
+    border-radius: 80px;
+    font-size: 1.5em; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
 }
