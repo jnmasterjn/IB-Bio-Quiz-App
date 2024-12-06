@@ -49,7 +49,7 @@ function Review() {
             onClick={() => {
                 clearIncorrectAnswers(); // Clear answers
             }}>
-        I have reviewed all my wrong answers.
+        I have reviewed all wrong answers.
         </button>
 )}
             </div>
