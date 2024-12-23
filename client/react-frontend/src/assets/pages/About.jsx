@@ -9,7 +9,7 @@ function About() {
             <h3>"Don't worry, I got you."</h3>
             <br></br>
             <p>This web app is designed to aid IB Biology students (SL/HL) in studying for their exams.</p>
-            <p>All questions are IB-tailored, extracted from public IB databases, IB study guides, and my biology notes (I promise they're good).</p>
+            <p>All questions are IB-tailored, extracted from public IB databases, IB study guides, and my biology notes.</p>
             <p>What are you still waiting for? Practice now before it's too late!</p>
             <Link to='../rule'><button>Begin Your 7-Point Journey</button></Link>
         </div>
