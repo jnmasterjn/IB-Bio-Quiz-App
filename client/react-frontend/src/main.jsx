@@ -10,6 +10,7 @@ import Rule from './assets/pages/Rule'
 import Contact from './assets/pages/Contact'
 import Review from './assets/pages/Review'
 import About from './assets/pages/About'
+import Nothing from './assets/pages/Nothing'
 
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom' // import routing components
@@ -19,6 +20,10 @@ import Home from './assets/pages/Home' // import Home page component
 
 // define the router configuration
 const myrouter = createBrowserRouter([
+
+  {path:"",
+    element: <Nothing/>},
+
   {path:"signin", // signin route
     element: <Signin/>},
 
